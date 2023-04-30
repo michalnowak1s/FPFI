@@ -13,6 +13,8 @@ namespace FPFI.Models
         public DateTime MeakDay { get; set; }
         public int Section { get; set; }
 
+        public virtual MealPlans MealPlan { get; set; }
+        public virtual Account Account { get; set; }
 
     }
 }
