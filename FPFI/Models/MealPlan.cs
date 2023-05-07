@@ -5,7 +5,7 @@ using System.Web;
 
 namespace FPFI.Models
 {
-    public class MealPlans
+    public class MealPlan
     {
         public int MealPlansID { get; set; }
         public int AccountID { get; set; }
@@ -13,7 +13,7 @@ namespace FPFI.Models
         public DateTime MeakDay { get; set; }
         public int Section { get; set; }
 
-        public virtual MealPlans MealPlan { get; set; }
+        public virtual MealPlan MealPlans { get; set; }
         public virtual Account Account { get; set; }
 
     }

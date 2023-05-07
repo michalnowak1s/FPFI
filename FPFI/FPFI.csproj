@@ -128,14 +128,15 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\RegistrationController.cs" />
     <Compile Include="DAL\FPFIContext.cs" />
+    <Compile Include="DAL\Initialize.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\Account.cs" />
-    <Compile Include="Models\Ingredients.cs" />
-    <Compile Include="Models\MealPlans.cs" />
-    <Compile Include="Models\Meals.cs" />
-    <Compile Include="Models\MealsIngredients.cs" />
+    <Compile Include="Models\Ingredient.cs" />
+    <Compile Include="Models\MealPlan.cs" />
+    <Compile Include="Models\Meal.cs" />
+    <Compile Include="Models\MealIngredient.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

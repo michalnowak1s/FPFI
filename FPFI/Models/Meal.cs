@@ -5,7 +5,7 @@ using System.Web;
 
 namespace FPFI.Models
 {
-    public class Meals
+    public class Meal
     {
         public int MealID { get; set; }
         public string Name { get; set; }
