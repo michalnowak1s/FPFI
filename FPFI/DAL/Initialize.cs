@@ -4,12 +4,11 @@ using System.Linq;
 using System.Web;
 using System.Data.Entity;
 using FPFI.Models;
-using System.Diagnostics;
-using FPFI.DAL;
 
-namespace ContosoUniversity.DAL
+
+namespace FPFI.DAL
 {
-    public class SchoolInitializer : System.Data.Entity.DropCreateDatabaseIfModelChanges<FPFIContext>
+    public class FPFIInitializer : DropCreateDatabaseIfModelChanges<FPFIContext>
     {
         protected override void Seed(FPFIContext context)
         {
