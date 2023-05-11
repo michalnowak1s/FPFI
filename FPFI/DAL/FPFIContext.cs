@@ -14,7 +14,7 @@ namespace FPFI.DAL
         {
         }
 
-        public DbSet<Account> Accounts { get; set; }
+        public DbSet<Account> Account { get; set; }
         public DbSet<Ingredient> Ingredients { get; set; }
         public DbSet<MealPlan> MealPlans { get; set; }
         public DbSet<Meal> Meals { get; set; }

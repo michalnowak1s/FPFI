@@ -1,5 +1,8 @@
-﻿using System;
+﻿using FPFI.DAL;
+using FPFI.Models;
+using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -8,10 +11,11 @@ namespace FPFI.Controllers
 {
     public class RegistrationController : Controller
     {
+        private FPFIContext db = new FPFIContext();
         // GET: Registration
         public ActionResult Index()
         {
-            return View();
+            return View(db.Account.ToList());
         }
 
         // GET: Registration/Details/5
@@ -28,18 +32,25 @@ namespace FPFI.Controllers
 
         // POST: Registration/Create
         [HttpPost]
-        public ActionResult Create(FormCollection collection)
+        [ValidateAntiForgeryToken]
+
+        public ActionResult Create([Bind(Include = "Login, Password")] Account account)
         {
             try
             {
-                // TODO: Add insert logic here
-
-                return RedirectToAction("Index");
+                if (ModelState.IsValid)
+                {
+                    db.Account.Add(account);
+                    db.SaveChanges();
+                    return RedirectToAction("Index");
+                }
             }
-            catch
+            catch (DataException /* dex */)
             {
-                return View();
+                //Log the error (uncomment dex variable name and add a line here to write a log.
+                ModelState.AddModelError("", "Unable to save changes. Try again, and if the problem persists see your system administrator.");
             }
+            return View(account);
         }
 
         // GET: Registration/Edit/5

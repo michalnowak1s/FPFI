@@ -23,7 +23,7 @@ namespace FPFI.DAL
             new Account{Login="Laura",Password="Norman"},
             new Account{Login="Nino",Password="Olivetto"}
             };
-            students.ForEach(s => context.Accounts.Add(s));
+            students.ForEach(s => context.Account.Add(s));
             context.SaveChanges();
 
             var ingredients = new List<Ingredient>
