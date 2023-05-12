@@ -15,7 +15,7 @@ namespace FPFI.Controllers
         // GET: Registration
         public ActionResult Index()
         {
-            return View(db.Account.ToList());
+            return View(db.Accounts.ToList());
         }
 
         // GET: Registration/Details/5
@@ -40,7 +40,7 @@ namespace FPFI.Controllers
             {
                 if (ModelState.IsValid)
                 {
-                    db.Account.Add(account);
+                    db.Accounts.Add(account);
                     db.SaveChanges();
                     return RedirectToAction("Index");
                 }

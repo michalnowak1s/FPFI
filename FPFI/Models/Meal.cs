@@ -18,6 +18,9 @@ namespace FPFI.Models
         public string Difficulty { get; set; }
         public string TimeConsumption { get; set; }
         public string Type { get; set; }
+        public int AccountID { get; set; }
+
+        public virtual Account Account { get; set; }
 
     }
 }
