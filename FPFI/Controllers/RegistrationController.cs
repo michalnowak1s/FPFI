@@ -34,7 +34,7 @@ namespace FPFI.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
 
-        public ActionResult Create([Bind(Include = "Login, Password")] Account account)
+        public ActionResult Create([Bind(Include = "Login, Password, Email")] Account account)
         {
             try
             {
