@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
+using System.Net;
 using System.Web;
 using System.Web.Mvc;
 
@@ -16,6 +17,7 @@ namespace FPFI.Controllers
         public ActionResult Index()
         {
             return View(db.Accounts.ToList());
+
         }
 
         // GET: Registration/Details/5
@@ -78,12 +80,15 @@ namespace FPFI.Controllers
         // GET: Registration/Delete/5
         public ActionResult Delete(int id)
         {
-            return View();
+
+            return View(db.Accounts.Find(id));
         }
+
 
         // POST: Registration/Delete/5
         [HttpPost]
-        public ActionResult Delete(int id, FormCollection collection)
+        [ValidateAntiForgeryToken]
+        public ActionResult Delete(int id, Account account)
         {
             try
             {
