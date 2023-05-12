@@ -19,39 +19,39 @@ namespace FPFI
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
 
-            using (var context = new FPFIContext())
-            {
-                var students = new List<Account>
-            {
-            new Account{Login="Carson",Password="Alexander"},
-            new Account{Login="Meredith",Password="Alonso"},
-            new Account{Login="Arturo",Password="Anand"},
-            new Account{Login="Gytis",Password="Barzdukas"},
-            new Account{Login="Yan",Password="Li"},
-            new Account{Login="Peggy",Password="Justice"},
-            new Account{Login="Laura",Password="Norman"},
-            new Account{Login="Nino",Password="Olivetto"}
-            };
-                students.ForEach(s => context.Accounts.Add(s));
-                context.SaveChanges();
+            //using (var context = new FPFIContext())
+            //{
+            //    var students = new List<Account>
+            //{
+            //new Account{Login="Carson",Password="Alexander"},
+            //new Account{Login="Meredith",Password="Alonso"},
+            //new Account{Login="Arturo",Password="Anand"},
+            //new Account{Login="Gytis",Password="Barzdukas"},
+            //new Account{Login="Yan",Password="Li"},
+            //new Account{Login="Peggy",Password="Justice"},
+            //new Account{Login="Laura",Password="Norman"},
+            //new Account{Login="Nino",Password="Olivetto"}
+            //};
+            //    students.ForEach(s => context.Accounts.Add(s));
+            //    context.SaveChanges();
 
-                var units = new List<Unit>
-            {
-                new Unit {Name="Gramy"}
-            };
-                units.ForEach(s => context.Units.Add(s));
-                context.SaveChanges();
+            //    var units = new List<Unit>
+            //{
+            //    new Unit {Name="Gramy"}
+            //};
+            //    units.ForEach(s => context.Units.Add(s));
+            //    context.SaveChanges();
 
-                var ingredients = new List<Ingredient>
-            {
-            new Ingredient{Name="PenautButter", Allergen="nuts", Endurance="5", Nutriscore="A", Type="vegetables", UnitID=1},
-            new Ingredient{Name="Broccoli", Endurance="15", Nutriscore="C", Type="vegetables", UnitID=1},
-            new Ingredient{Name="OliveOil", Endurance="5", Nutriscore="E", Type="oils", UnitID=1},
-            new Ingredient{Name="Apple", Endurance="5", Nutriscore="B", Type="fruits", UnitID=1},
+            //    var ingredients = new List<Ingredient>
+            //{
+            //new Ingredient{Name="PenautButter", Allergen="nuts", Endurance="5", Nutriscore="A", Type="vegetables", UnitID=1},
+            //new Ingredient{Name="Broccoli", Endurance="15", Nutriscore="C", Type="vegetables", UnitID=1},
+            //new Ingredient{Name="OliveOil", Endurance="5", Nutriscore="E", Type="oils", UnitID=1},
+            //new Ingredient{Name="Apple", Endurance="5", Nutriscore="B", Type="fruits", UnitID=1},
 
-            };
-                ingredients.ForEach(s => context.Ingredients.Add(s));
-                context.SaveChanges();
+            //};
+            //    ingredients.ForEach(s => context.Ingredients.Add(s));
+            //    context.SaveChanges();
 
                 //    var meals = new List<Meal>
                 //{
@@ -81,6 +81,6 @@ namespace FPFI
             }
         }
     }
-}
+
     
 
