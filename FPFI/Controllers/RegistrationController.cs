@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
+using System.Net;
 using System.Web;
 using System.Web.Mvc;
 
@@ -15,7 +16,8 @@ namespace FPFI.Controllers
         // GET: Registration
         public ActionResult Index()
         {
-            return View(db.Account.ToList());
+            return View(db.Accounts.ToList());
+
         }
 
         // GET: Registration/Details/5
@@ -34,13 +36,13 @@ namespace FPFI.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
 
-        public ActionResult Create([Bind(Include = "Login, Password")] Account account)
+        public ActionResult Create([Bind(Include = "Login, Password, Email")] Account account)
         {
             try
             {
                 if (ModelState.IsValid)
                 {
-                    db.Account.Add(account);
+                    db.Accounts.Add(account);
                     db.SaveChanges();
                     return RedirectToAction("Index");
                 }
@@ -78,12 +80,15 @@ namespace FPFI.Controllers
         // GET: Registration/Delete/5
         public ActionResult Delete(int id)
         {
-            return View();
+
+            return View(db.Accounts.Find(id));
         }
+
 
         // POST: Registration/Delete/5
         [HttpPost]
-        public ActionResult Delete(int id, FormCollection collection)
+        [ValidateAntiForgeryToken]
+        public ActionResult Delete(int id, Account account)
         {
             try
             {

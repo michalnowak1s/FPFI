@@ -7,17 +7,13 @@ using System.Web;
 
 namespace FPFI.Models
 {
-    public class Account
+    public class Unit
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int AccountID { get; set; }
+        public int UnitID { get; set; }
         [Required]
-        public string Login { get; set; }
-        [Required]
-        public string Password { get; set; }
-        [EmailAddress]
-        public string Email { get; set; }
+        public string Name { get; set; }
 
     }
 }

@@ -17,6 +17,9 @@ namespace FPFI.Models
         public string Nutriscore { get; set; }
         public string Endurance { get; set; }
         public string Allergen { get; set; }
-        public string Unit { get; set; }
+        public int UnitID { get; set; }
+
+
+        public virtual Unit Unit { get; set; }
     }
 }

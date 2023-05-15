@@ -23,19 +23,19 @@ namespace FPFI.DAL
             new Account{Login="Laura",Password="Norman"},
             new Account{Login="Nino",Password="Olivetto"}
             };
-            students.ForEach(s => context.Account.Add(s));
+            students.ForEach(s => context.Accounts.Add(s));
             context.SaveChanges();
 
-            var ingredients = new List<Ingredient>
-            {
-            new Ingredient{Name="PenautButter", Allergen="nuts", Endurance="5", Nutriscore="A", Type="vegetables", Unit="g"},
-            new Ingredient{Name="Broccoli", Endurance="15", Nutriscore="C", Type="vegetables", Unit="g"},
-            new Ingredient{Name="OliveOil", Endurance="5", Nutriscore="E", Type="oils", Unit="g"},
-            new Ingredient{Name="Apple", Endurance="5", Nutriscore="B", Type="fruits", Unit="g"},
+            //var ingredients = new List<Ingredient>
+            //{
+            //new Ingredient{Name="PenautButter", Allergen="nuts", Endurance="5", Nutriscore="A", Type="vegetables", Unit="1"},
+            //new Ingredient{Name="Broccoli", Endurance="15", Nutriscore="C", Type="vegetables", Unit="1"},
+            //new Ingredient{Name="OliveOil", Endurance="5", Nutriscore="E", Type="oils", Unit=1},
+            //new Ingredient{Name="Apple", Endurance="5", Nutriscore="B", Type="fruits", Unit="1"},
 
-            };
-            ingredients.ForEach(s => context.Ingredients.Add(s));
-            context.SaveChanges();
+            //};
+            //ingredients.ForEach(s => context.Ingredients.Add(s));
+            //context.SaveChanges();
 
             var meals = new List<Meal>
             {

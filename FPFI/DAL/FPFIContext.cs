@@ -14,11 +14,14 @@ namespace FPFI.DAL
         {
         }
 
-        public DbSet<Account> Account { get; set; }
+        public DbSet<Account> Accounts { get; set; }
         public DbSet<Ingredient> Ingredients { get; set; }
         public DbSet<MealPlan> MealPlans { get; set; }
         public DbSet<Meal> Meals { get; set; }
         public DbSet<MealIngredient> MealIngredients { get; set; }
+        public DbSet<Tag> Tags { get; set; }
+        public DbSet<TagsMeal> TagsMeals { get; set; }
+        public DbSet<Unit> Units { get; set; }
 
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)

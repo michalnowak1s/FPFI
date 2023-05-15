@@ -136,6 +136,9 @@
     <Compile Include="Models\MealPlan.cs" />
     <Compile Include="Models\Meal.cs" />
     <Compile Include="Models\MealIngredient.cs" />
+    <Compile Include="Models\Tag.cs" />
+    <Compile Include="Models\TagsMeal.cs" />
+    <Compile Include="Models\Unit.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -194,6 +197,7 @@
     <Content Include="Views\Home\Users.cshtml" />
     <Content Include="Views\Registration\Create.cshtml" />
     <Content Include="Views\Registration\Index.cshtml" />
+    <Content Include="Views\Registration\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
