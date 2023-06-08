@@ -132,6 +132,15 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202305091743589_InitialCreate.cs" />
+    <Compile Include="Migrations\202305091743589_InitialCreate.designer.cs">
+      <DependentUpon>202305091743589_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202305151638067_update.cs" />
+    <Compile Include="Migrations\202305151638067_update.designer.cs">
+      <DependentUpon>202305151638067_update.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Account.cs" />
     <Compile Include="Models\Ingredient.cs" />
     <Compile Include="Models\MealPlan.cs" />
@@ -143,6 +152,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\about.txt" />
+    <Content Include="Content\android-chrome-192x192.png" />
+    <Content Include="Content\android-chrome-512x512.png" />
+    <Content Include="Content\apple-touch-icon.png" />
     <Content Include="Content\bootstrap-grid.css" />
     <Content Include="Content\bootstrap-grid.min.css" />
     <Content Include="Content\bootstrap-grid.rtl.css" />
@@ -159,15 +172,79 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\bootstrap.rtl.css" />
     <Content Include="Content\bootstrap.rtl.min.css" />
+    <Content Include="Content\favicon-16x16.png" />
+    <Content Include="Content\favicon-32x32.png" />
+    <Content Include="Content\favicon.ico" />
+    <Content Include="Content\FontAwesome\css\font-awesome.css" />
+    <Content Include="Content\FontAwesome\css\font-awesome.min.css" />
+    <Content Include="Content\FontAwesome\fonts\fontawesome-webfont.svg" />
+    <Content Include="Content\HELP-US-OUT.txt" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Content\FontAwesome\fonts\fontawesome-webfont.eot" />
+    <Content Include="Content\FontAwesome\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Content\FontAwesome\fonts\fontawesome-webfont.woff" />
+    <Content Include="Content\FontAwesome\fonts\fontawesome-webfont.woff2" />
+    <Content Include="Content\FontAwesome\fonts\FontAwesome.otf" />
+    <Content Include="Content\FontAwesome\less\animated.less" />
+    <Content Include="Content\FontAwesome\less\bordered-pulled.less" />
+    <Content Include="Content\FontAwesome\less\core.less" />
+    <Content Include="Content\FontAwesome\less\fixed-width.less" />
+    <Content Include="Content\FontAwesome\less\font-awesome.less" />
+    <Content Include="Content\FontAwesome\less\icons.less" />
+    <Content Include="Content\FontAwesome\less\larger.less" />
+    <Content Include="Content\FontAwesome\less\list.less" />
+    <Content Include="Content\FontAwesome\less\mixins.less" />
+    <Content Include="Content\FontAwesome\less\path.less" />
+    <Content Include="Content\FontAwesome\less\rotated-flipped.less" />
+    <Content Include="Content\FontAwesome\less\screen-reader.less" />
+    <Content Include="Content\FontAwesome\less\stacked.less" />
+    <Content Include="Content\FontAwesome\less\variables.less" />
+    <Content Include="Content\FontAwesome\scss\font-awesome.scss" />
+    <Content Include="Content\FontAwesome\scss\_animated.scss" />
+    <Content Include="Content\FontAwesome\scss\_bordered-pulled.scss" />
+    <Content Include="Content\FontAwesome\scss\_core.scss" />
+    <Content Include="Content\FontAwesome\scss\_fixed-width.scss" />
+    <Content Include="Content\FontAwesome\scss\_icons.scss" />
+    <Content Include="Content\FontAwesome\scss\_larger.scss" />
+    <Content Include="Content\FontAwesome\scss\_list.scss" />
+    <Content Include="Content\FontAwesome\scss\_mixins.scss" />
+    <Content Include="Content\FontAwesome\scss\_path.scss" />
+    <Content Include="Content\FontAwesome\scss\_rotated-flipped.scss" />
+    <Content Include="Content\FontAwesome\scss\_screen-reader.scss" />
+    <Content Include="Content\FontAwesome\scss\_stacked.scss" />
+    <Content Include="Content\FontAwesome\scss\_variables.scss" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.esm.js" />
     <Content Include="Scripts\bootstrap.esm.min.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+
+    <Content Include="Scripts\bootstrap.min.js.map" />
+    <Content Include="Scripts\bootstrap.js.map" />
+    <Content Include="Scripts\bootstrap.esm.min.js.map" />
+    <Content Include="Scripts\bootstrap.esm.js.map" />
+    <Content Include="Scripts\bootstrap.bundle.min.js.map" />
+    <Content Include="Scripts\bootstrap.bundle.js.map" />
+    <Content Include="Content\bootstrap.rtl.min.css.map" />
+    <Content Include="Content\bootstrap.rtl.css.map" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap-utilities.rtl.min.css.map" />
+    <Content Include="Content\bootstrap-utilities.rtl.css.map" />
+    <Content Include="Content\bootstrap-utilities.min.css.map" />
+    <Content Include="Content\bootstrap-utilities.css.map" />
+    <Content Include="Content\bootstrap-reboot.rtl.min.css.map" />
+    <Content Include="Content\bootstrap-reboot.rtl.css.map" />
+    <Content Include="Content\bootstrap-reboot.min.css.map" />
+    <Content Include="Content\bootstrap-reboot.css.map" />
+    <Content Include="Content\bootstrap-grid.rtl.min.css.map" />
+    <Content Include="Content\bootstrap-grid.rtl.css.map" />
+    <Content Include="Content\bootstrap-grid.min.css.map" />
+    <Content Include="Content\bootstrap-grid.css.map" />
+   
     <None Include="Scripts\jquery-3.7.0.intellisense.js" />
     <Content Include="Scripts\jquery-3.7.0.js" />
     <Content Include="Scripts\jquery-3.7.0.min.js" />
@@ -175,6 +252,7 @@
     <Content Include="Scripts\jquery-3.7.0.slim.min.js" />
     <Content Include="Scripts\jquery-3.7.0.slim.min.map" />
     <Content Include="Scripts\jquery-3.7.0.min.map" />
+
     <None Include="Scripts\jquery.validate-vsdoc.js" />
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js" />
@@ -210,29 +288,15 @@
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Content\bootstrap.rtl.min.css.map" />
-    <Content Include="Content\bootstrap.rtl.css.map" />
-    <Content Include="Content\bootstrap.min.css.map" />
-    <Content Include="Content\bootstrap.css.map" />
-    <Content Include="Content\bootstrap-utilities.rtl.min.css.map" />
-    <Content Include="Content\bootstrap-utilities.rtl.css.map" />
-    <Content Include="Content\bootstrap-utilities.min.css.map" />
-    <Content Include="Content\bootstrap-utilities.css.map" />
-    <Content Include="Content\bootstrap-reboot.rtl.min.css.map" />
-    <Content Include="Content\bootstrap-reboot.rtl.css.map" />
-    <Content Include="Content\bootstrap-reboot.min.css.map" />
-    <Content Include="Content\bootstrap-reboot.css.map" />
-    <Content Include="Content\bootstrap-grid.rtl.min.css.map" />
-    <Content Include="Content\bootstrap-grid.rtl.css.map" />
-    <Content Include="Content\bootstrap-grid.min.css.map" />
-    <Content Include="Content\bootstrap-grid.css.map" />
     <None Include="packages.config" />
-    <Content Include="Scripts\bootstrap.min.js.map" />
-    <Content Include="Scripts\bootstrap.js.map" />
-    <Content Include="Scripts\bootstrap.esm.min.js.map" />
-    <Content Include="Scripts\bootstrap.esm.js.map" />
-    <Content Include="Scripts\bootstrap.bundle.min.js.map" />
-    <Content Include="Scripts\bootstrap.bundle.js.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202305091743589_InitialCreate.resx">
+      <DependentUpon>202305091743589_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202305151638067_update.resx">
+      <DependentUpon>202305151638067_update.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

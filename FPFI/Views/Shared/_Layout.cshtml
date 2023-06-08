@@ -1,42 +1,89 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - FPFI</title>
     @Styles.Render("~/Content/css")
+    <link href="~/Content/Site.css" rel="stylesheet">
+    <link rel="apple-touch-icon" sizes="180x180" href="/Content/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/Content/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/Content/favicon-16x16.png">
+    <link rel="stylesheet" href="~/Content/FontAwesome/css/font-awesome.min.css">
     @Scripts.Render("~/bundles/modernizr")
 </head>
 <body>
-    <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark bg-dark">
-        <div class="container">
-            @Html.ActionLink("FPFI", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
-            <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" title="Przełącz nawigację" aria-controls="navbarSupportedContent"
-                    aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse d-sm-inline-flex justify-content-between">
-                <ul class="navbar-nav flex-grow-1">
-                    <li>@Html.ActionLink("Strona główna", "Index", "Home", new { area = "" }, new { @class = "nav-link" })</li>
-                    <li>@Html.ActionLink("Rejestracja", "Create", "Registration", new { area = "" }, new { @class = "nav-link" })</li>
-                    <li>@Html.ActionLink("Users", "Index", "Registration", new { area = "" }, new { @class = "nav-link" })</li>
-                    <li>@Html.ActionLink("Informacje", "About", "Home", new { area = "" }, new { @class = "nav-link" })</li>
-                    <li>@Html.ActionLink("Kontakt", "Contact", "Home", new { area = "" }, new { @class = "nav-link" })</li>
-                </ul>
+
+    <header>
+      
+        <nav id="sidebar" class="collapse d-lg-block  collapse bg-white">
+            <div class="position-sticky">
+                <div class="list-group list-group-flush mx-3 mt-4">
+
+                   @Html.ActionLink("Strona główna", "Index", "Home", new { area = "" }, new { @class = "list-group-item list-group-item-action py-3 ripple" })
+                   @Html.ActionLink("Rejestracja", "Create", "Registration", new { area = "" }, new { @class = "list-group-item list-group-item-action py-3 ripple" })
+                   @Html.ActionLink("Users", "Index", "Registration", new { area = "" }, new { @class = "list-group-item list-group-item-action py-3 ripple" })
+                   @Html.ActionLink("Informacje", "About", "Home", new { area = "" }, new { @class = "list-group-item list-group-item-action py-3 ripple" })
+                   @Html.ActionLink("Kontakt", "Contact", "Home", new { area = "" }, new { @class = "list-group-item list-group-item-action py-3 ripple" })
+
+
+                </div>
             </div>
-        </div>
-    </nav>
-    <div class="container body-content">
-        @RenderBody()
-        <div class=" fixed-bottom m-lg-1">
-            <hr />
-            <footer>
-                <p>&copy; @DateTime.Now.Year - FPFI</p>
-            </footer>
-        </div>
+        </nav>
        
-    </div>
+     
+        <nav id="main-navbar"
+             class="navbar navbar-expand-lg navbar-light bg-white  m-1 fixed-top">
+            
+            
+                <a class="navbar-brand pt-1" href="/">
+                    <img src="~/Content/android-chrome-512x512.png"
+                         height="35"
+                         alt=""
+                         loading="lazy" />
+                    - Food P.. F.. I..
+                </a>
+             
+        </nav>
+    </header>
+  
+    <main style="margin-top: 58px;">
+        <div class="container-fluid pt-4">
+            @RenderBody()
+        </div>
+    </main>
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")

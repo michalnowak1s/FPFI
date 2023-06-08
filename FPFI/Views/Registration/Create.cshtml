@@ -1,4 +1,7 @@
 ﻿@model FPFI.Models.Account
+    @{ 
+        ViewBag.Title = "Register";
+    }
 
 @using (Html.BeginForm())
 {
@@ -12,6 +15,7 @@
     @Html.ValidationSummary(true, "", new { @class = "text-danger" })
 
     <div class="form-group">
+
 
         @Html.LabelFor(model => model.Login, htmlAttributes: new { @class = "control-label col-md-2" })
 
