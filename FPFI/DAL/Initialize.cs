@@ -45,7 +45,7 @@ namespace FPFI.DAL
             new Meal{Name="ModroKapusta", Nationality="silesia", Difficulty="5", Nutriscore="C", Type="slunskie", TimeConsumption="3h"},
             new Meal{Name="TortilieKurczak", Nationality="mexico", Difficulty="2", Nutriscore="B", Type="tortilie", TimeConsumption="15m"},
             };
-            meals.ForEach(s => context.Meals.Add(s));
+            meals.ForEach(s => context.Meal.Add(s));
             context.SaveChanges();
 
 
@@ -58,7 +58,7 @@ namespace FPFI.DAL
             new MealIngredient{MealID=3, IngredientID=6, Quantity= 15},
 
             };
-            meals.ForEach(s => context.Meals.Add(s));
+            meals.ForEach(s => context.Meal.Add(s));
             context.SaveChanges();
         }
     }
