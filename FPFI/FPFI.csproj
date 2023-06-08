@@ -131,6 +131,15 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202305091743589_InitialCreate.cs" />
+    <Compile Include="Migrations\202305091743589_InitialCreate.designer.cs">
+      <DependentUpon>202305091743589_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202305151638067_update.cs" />
+    <Compile Include="Migrations\202305151638067_update.designer.cs">
+      <DependentUpon>202305151638067_update.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Account.cs" />
     <Compile Include="Models\Ingredient.cs" />
     <Compile Include="Models\MealPlan.cs" />
@@ -226,6 +235,14 @@
     <Content Include="Scripts\bootstrap.esm.js.map" />
     <Content Include="Scripts\bootstrap.bundle.min.js.map" />
     <Content Include="Scripts\bootstrap.bundle.js.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202305091743589_InitialCreate.resx">
+      <DependentUpon>202305091743589_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202305151638067_update.resx">
+      <DependentUpon>202305151638067_update.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
