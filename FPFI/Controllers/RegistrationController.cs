@@ -3,8 +3,11 @@ using FPFI.Models;
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.Entity.Infrastructure;
+using System.Data.Entity.Migrations;
 using System.Linq;
 using System.Net;
+using System.Security.Principal;
 using System.Web;
 using System.Web.Mvc;
 
@@ -56,25 +59,38 @@ namespace FPFI.Controllers
         }
 
         // GET: Registration/Edit/5
-        public ActionResult Edit(int id)
+        public ActionResult Edit(int id=0)
         {
-            return View();
+            return View(db.Accounts.Find(id));
         }
 
         // POST: Registration/Edit/5
-        [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
+        [HttpPost, ActionName("Edit")]
+        [ValidateAntiForgeryToken]
+        public ActionResult Edit(int? id)
         {
-            try
+            if (id == null)
             {
-                // TODO: Add update logic here
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            var accountToUpdate = db.Accounts.Find(id);
+            if (TryUpdateModel(accountToUpdate, "",
+               new string[] { "Login", "Password", "Email" }))
+            {
+                try
+                {
+                    db.SaveChanges();
 
-                return RedirectToAction("Index");
+                    return RedirectToAction("Index");
+                }
+                catch (RetryLimitExceededException /* dex */)
+                {
+                    //Log the error (uncomment dex variable name and add a line here to write a log.
+                    ModelState.AddModelError("", "Unable to save changes. Try again, and if the problem persists, see your system administrator.");
+                }
             }
-            catch
-            {
-                return View();
-            }
+            //PopulateDepartmentsDropDownList(courseToUpdate.DepartmentID);
+            return View(accountToUpdate);
         }
 
         // GET: Registration/Delete/5

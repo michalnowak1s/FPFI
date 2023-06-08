@@ -53,30 +53,30 @@ namespace FPFI
             //    ingredients.ForEach(s => context.Ingredients.Add(s));
             //    context.SaveChanges();
 
-                //    var meals = new List<Meal>
-                //{
-                //new Meal{Name="Kluski", Nationality="silesia", Difficulty="3", Nutriscore="A", Type="klyuskowate", TimeConsumption="2h"},
-                //new Meal{Name="Paruwy", Nationality="golen", Difficulty="1", Nutriscore="F", Type="szypkie", TimeConsumption="10m"},
-                //new Meal{Name="ParuwyParowe", Nationality="germany", Difficulty="2", Nutriscore="E", Type="parowe", TimeConsumption="20m"},
-                //new Meal{Name="ModroKapusta", Nationality="silesia", Difficulty="5", Nutriscore="C", Type="slunskie", TimeConsumption="3h"},
-                //new Meal{Name="TortilieKurczak", Nationality="mexico", Difficulty="2", Nutriscore="B", Type="tortilie", TimeConsumption="15m"},
-                //};
-                //    meals.ForEach(s => context.Meals.Add(s));
-                //    context.SaveChanges();
+               /* var meals = new List<Meal>
+            {
+            new Meal{Name="Kluski", Nationality="silesia", Difficulty="3", Nutriscore="A", Type="klyuskowate", TimeConsumption="2h", AccountID=1},
+            new Meal{Name="Paruwy", Nationality="golen", Difficulty="1", Nutriscore="F", Type="szypkie", TimeConsumption="10m", AccountID=1},
+            new Meal{Name="ParuwyParowe", Nationality="germany", Difficulty="2", Nutriscore="E", Type="parowe", TimeConsumption="20m", AccountID=1},
+            new Meal{Name="ModroKapusta", Nationality="silesia", Difficulty="5", Nutriscore="C", Type="slunskie", TimeConsumption="3h", AccountID = 1},
+            new Meal{Name="TortilieKurczak", Nationality="mexico", Difficulty="2", Nutriscore="B", Type="tortilie", TimeConsumption="15m", AccountID = 1},
+            };
+                meals.ForEach(s => context.Meal.Add(s));
+                context.SaveChanges();*/
 
 
-                //    var mealsingredients = new List<MealIngredient>
-                //{
-                //new MealIngredient{MealID=1, IngredientID=3, Quantity= 15},
-                //new MealIngredient{MealID=1, IngredientID=4, Quantity= 10},
-                //new MealIngredient{MealID=1, IngredientID=6, Quantity= 5},
-                //new MealIngredient{MealID=2, IngredientID=5, Quantity= 3},
-                //new MealIngredient{MealID=3, IngredientID=6, Quantity= 15},
+            //    var mealsingredients = new List<MealIngredient>
+            //{
+            //new MealIngredient{MealID=1, IngredientID=3, Quantity= 15},
+            //new MealIngredient{MealID=1, IngredientID=4, Quantity= 10},
+            //new MealIngredient{MealID=1, IngredientID=6, Quantity= 5},
+            //new MealIngredient{MealID=2, IngredientID=5, Quantity= 3},
+            //new MealIngredient{MealID=3, IngredientID=6, Quantity= 15},
 
-                //};
-                //    meals.ForEach(s => context.Meals.Add(s));
-                //    context.SaveChanges();
-                //}
+            //};
+            //    meals.ForEach(s => context.Meals.Add(s));
+            //    context.SaveChanges();
+            //}
 
             }
         }
