@@ -108,7 +108,9 @@ namespace FPFI.Controllers
         {
             try
             {
-                // TODO: Add delete logic here
+                account = db.Accounts.Find(id);
+                db.Accounts.Remove(account);
+                db.SaveChanges();
 
                 return RedirectToAction("Index");
             }

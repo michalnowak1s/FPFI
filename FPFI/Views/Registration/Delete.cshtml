@@ -1,6 +1,38 @@
-﻿
-<h2>Delete</h2>
-<p class="error">@ViewBag.ErrorMessage</p>
-<h3>Are you sure you want to delete this?</h3>
-<input type="submit" value="Delete" class="btn btn-danger" />
+﻿@model FPFI.Models.Account
+<h3 class="text-left">Are you sure you want to delete this?</h3>
+<div class="container p-3">
+    <div class="row align-items-center">
+        <div class="row">
 
+            <div class="card text-left w-50 ">
+                <h4 class="card-title p-1 text-center">Account</h4>
+                <hr />
+                <dl class="dl-horizontal p-1">
+                    <dd>
+                        <b>@Html.DisplayNameFor(model => model.Login) </b> : @Html.DisplayFor(model => model.Login)
+                    </dd>
+
+                    <dd>
+                        <b>@Html.DisplayNameFor(model => model.Password) </b>: @Html.DisplayFor(model => model.Password)
+                    </dd>
+
+                    <dd>
+                        <b>@Html.DisplayNameFor(model => model.Email) </b>: @Html.DisplayFor(model => model.Email)
+                    </dd>
+
+                </dl>
+
+                @using (Html.BeginForm())
+                {
+                    @Html.AntiForgeryToken()
+
+                    <div class="form-actions p-1">
+                        <input type="submit" value="Delete" class="card-link" /> |
+                        @Html.ActionLink("Back to List", "Index", new { htmlAttributes = new { @class = "card-link" } })
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+
+</div>
