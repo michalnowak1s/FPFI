@@ -11,6 +11,7 @@
     <link rel="icon" type="image/png" sizes="32x32" href="/Content/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/Content/favicon-16x16.png">
     <link rel="stylesheet" href="~/Content/FontAwesome/css/font-awesome.min.css">
+    <script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.js'></script>
     @Scripts.Render("~/bundles/modernizr")
 </head>
 <body>
@@ -26,6 +27,7 @@
                    @Html.ActionLink("Users", "Index", "Registration", new { area = "" }, new { @class = "list-group-item list-group-item-action py-3 ripple" })
                    @Html.ActionLink("Informacje", "About", "Home", new { area = "" }, new { @class = "list-group-item list-group-item-action py-3 ripple" })
                    @Html.ActionLink("Kontakt", "Contact", "Home", new { area = "" }, new { @class = "list-group-item list-group-item-action py-3 ripple" })
+                   @Html.ActionLink("Posiłki", "Index", "Meals", new { area = "" }, new { @class = "list-group-item list-group-item-action py-3 ripple" })
 
 
                 </div>
@@ -53,36 +55,6 @@
             @RenderBody()
         </div>
     </main>
-
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
     @Scripts.Render("~/bundles/jquery")
