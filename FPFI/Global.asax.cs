@@ -19,8 +19,33 @@ namespace FPFI
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
 
-            //using (var context = new FPFIContext())
-            //{
+            using (var context = new FPFIContext())
+            {
+                var meals = new List<Meal>
+            {
+            new Meal{Name="Kluski", Nationality="silesia", Difficulty="3", Nutriscore="A", Type="klyuskowate", TimeConsumption="2h", AccountID=3},
+            new Meal{Name="Paruwy", Nationality="golen", Difficulty="1", Nutriscore="F", Type="szypkie", TimeConsumption="10m", AccountID=3},
+            new Meal{Name="ParuwyParowe", Nationality="germany", Difficulty="2", Nutriscore="E", Type="parowe", TimeConsumption="20m", AccountID=3},
+            new Meal{Name="ModroKapusta", Nationality="silesia", Difficulty="5", Nutriscore="C", Type="slunskie", TimeConsumption="3h", AccountID = 3},
+            new Meal{Name="TortilieKurczak", Nationality="mexico", Difficulty="2", Nutriscore="B", Type="tortilie", TimeConsumption="15m", AccountID = 3},
+            };
+                meals.ForEach(s => context.Meal.Add(s));
+                context.SaveChanges();
+
+
+
+
+                var units = new List<Unit>
+                {
+                    new Unit {Name="Gramy"},
+                    new Unit {Name="Szczypta"},
+
+                };
+                units.ForEach(u => context.Units.Add(u));
+                context.SaveChanges();
+            }
+
+
             //    var students = new List<Account>
             //{
             //new Account{Login="Carson",Password="Alexander"},
@@ -53,16 +78,16 @@ namespace FPFI
             //    ingredients.ForEach(s => context.Ingredients.Add(s));
             //    context.SaveChanges();
 
-               /* var meals = new List<Meal>
-            {
-            new Meal{Name="Kluski", Nationality="silesia", Difficulty="3", Nutriscore="A", Type="klyuskowate", TimeConsumption="2h", AccountID=1},
-            new Meal{Name="Paruwy", Nationality="golen", Difficulty="1", Nutriscore="F", Type="szypkie", TimeConsumption="10m", AccountID=1},
-            new Meal{Name="ParuwyParowe", Nationality="germany", Difficulty="2", Nutriscore="E", Type="parowe", TimeConsumption="20m", AccountID=1},
-            new Meal{Name="ModroKapusta", Nationality="silesia", Difficulty="5", Nutriscore="C", Type="slunskie", TimeConsumption="3h", AccountID = 1},
-            new Meal{Name="TortilieKurczak", Nationality="mexico", Difficulty="2", Nutriscore="B", Type="tortilie", TimeConsumption="15m", AccountID = 1},
-            };
-                meals.ForEach(s => context.Meal.Add(s));
-                context.SaveChanges();*/
+            /* var meals = new List<Meal>
+         {
+         new Meal{Name="Kluski", Nationality="silesia", Difficulty="3", Nutriscore="A", Type="klyuskowate", TimeConsumption="2h", AccountID=1},
+         new Meal{Name="Paruwy", Nationality="golen", Difficulty="1", Nutriscore="F", Type="szypkie", TimeConsumption="10m", AccountID=1},
+         new Meal{Name="ParuwyParowe", Nationality="germany", Difficulty="2", Nutriscore="E", Type="parowe", TimeConsumption="20m", AccountID=1},
+         new Meal{Name="ModroKapusta", Nationality="silesia", Difficulty="5", Nutriscore="C", Type="slunskie", TimeConsumption="3h", AccountID = 1},
+         new Meal{Name="TortilieKurczak", Nationality="mexico", Difficulty="2", Nutriscore="B", Type="tortilie", TimeConsumption="15m", AccountID = 1},
+         };
+             meals.ForEach(s => context.Meal.Add(s));
+             context.SaveChanges();*/
 
 
             //    var mealsingredients = new List<MealIngredient>
@@ -78,8 +103,8 @@ namespace FPFI
             //    context.SaveChanges();
             //}
 
-            }
         }
+    }
     }
 
     
