@@ -126,7 +126,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\CalendarController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\IngredientController.cs" />
+    <Compile Include="Controllers\IngredientsController.cs" />
     <Compile Include="Controllers\MealsController.cs" />
     <Compile Include="Controllers\RegistrationController.cs" />
     <Compile Include="DAL\FPFIContext.cs" />
@@ -283,11 +283,11 @@
     <Content Include="Views\Meals\Index.cshtml" />
     <Content Include="Views\Calendar\Index.cshtml" />
     <Content Include="Views\Registration\Delete.cshtml" />
-    <Content Include="Views\Ingredient\Index.cshtml" />
-    <Content Include="Views\Ingredient\Details.cshtml" />
-    <Content Include="Views\Ingredient\Edit.cshtml" />
-    <Content Include="Views\Ingredient\Delete.cshtml" />
-    <Content Include="Views\Ingredient\Create.cshtml" />
+    <Content Include="Views\Ingredients\Create.cshtml" />
+    <Content Include="Views\Ingredients\Delete.cshtml" />
+    <Content Include="Views\Ingredients\Details.cshtml" />
+    <Content Include="Views\Ingredients\Edit.cshtml" />
+    <Content Include="Views\Ingredients\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
