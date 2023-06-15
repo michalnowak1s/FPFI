@@ -1,10 +1,13 @@
 ﻿@model FPFI.Models.Ingredient
 
+@{
+    ViewBag.Title = "Create";
+}
 
-@using (Html.BeginForm()) 
+@using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-    
+
     <div class="form-horizontal">
         <h4>Ingredient</h4>
         <hr />

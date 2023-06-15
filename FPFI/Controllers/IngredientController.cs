@@ -3,7 +3,9 @@ using FPFI.Models;
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.Entity;
 using System.Linq;
+using System.Net;
 using System.Security.Principal;
 using System.Web;
 using System.Web.Mvc;
@@ -17,7 +19,9 @@ namespace FPFI.Controllers
         // GET: Ingredient
         public ActionResult Index()
         {
-            return View(db.Ingredients.ToList());
+            var ingredient = db.Ingredients.Include(i => i.Unit);
+            return View(ingredient.ToList());
+
         }
 
         // GET: Ingredient/Details/5
@@ -29,11 +33,13 @@ namespace FPFI.Controllers
         // GET: Ingredient/Create
         public ActionResult Create()
         {
+            ViewBag.UnitID = new SelectList(db.Units, "UnitID" , "Name" );
             return View();
         }
 
         // POST: Ingredient/Create
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "Name, Type, Nutriscore, Endurance, Allergen, UnitID")] Ingredient ingredient)
         {
             try
@@ -55,20 +61,36 @@ namespace FPFI.Controllers
         }
 
         // GET: Ingredient/Edit/5
-        public ActionResult Edit(int id)
+        public ActionResult Edit(int? id)
         {
-            return View();
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Ingredient ingredient = db.Ingredients.Find(id);
+            if (ingredient == null)
+            {
+                return HttpNotFound();
+            }
+            ViewBag.UnitID = new SelectList(db.Units, "UnitID", "Name", ingredient.UnitID);
+            return View(ingredient);
         }
 
         // POST: Ingredient/Edit/5
         [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
+        [ValidateAntiForgeryToken]
+        public ActionResult Edit([Bind(Include = "Name, Type, Nutriscore, Endurance, Allergen, UnitID")] Ingredient ingredient)
         {
             try
             {
-                // TODO: Add update logic here
-
-                return RedirectToAction("Index");
+                if (ModelState.IsValid)
+                {
+                    db.Entry(ingredient).State = EntityState.Modified;
+                    db.SaveChanges();
+                    return RedirectToAction("Index");
+                }
+                ViewBag.UnitID = new SelectList(db.Units, "UnitID", "Name", ingredient.UnitID);
+                return View(ingredient);
             }
             catch
             {
@@ -77,19 +99,30 @@ namespace FPFI.Controllers
         }
 
         // GET: Ingredient/Delete/5
-        public ActionResult Delete(int id)
+        public ActionResult Delete(int? id)
         {
-            return View();
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Ingredient ingredient = db.Ingredients.Find(id);
+            if (ingredient == null)
+            {
+                return HttpNotFound();
+            }
+            return View(ingredient);
         }
 
         // POST: Ingredient/Delete/5
-        [HttpPost]
+        [HttpPost, ActionName("Delete")]
+        [ValidateAntiForgeryToken]
         public ActionResult Delete(int id, FormCollection collection)
         {
             try
             {
-                // TODO: Add delete logic here
-
+                Ingredient ingredient = db.Ingredients.Find(id);
+                db.Ingredients.Remove(ingredient);
+                db.SaveChanges();
                 return RedirectToAction("Index");
             }
             catch
@@ -97,5 +130,16 @@ namespace FPFI.Controllers
                 return View();
             }
         }
+
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing)
+            {
+                db.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+
     }
 }
