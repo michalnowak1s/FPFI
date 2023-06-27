@@ -127,6 +127,7 @@
     <Compile Include="Controllers\CalendarController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\IngredientsController.cs" />
+    <Compile Include="Controllers\MealIngredientsController.cs" />
     <Compile Include="Controllers\MealsController.cs" />
     <Compile Include="Controllers\RegistrationController.cs" />
     <Compile Include="Controllers\UnitsController.cs" />
@@ -294,6 +295,10 @@
     <Content Include="Views\Units\Edit.cshtml" />
     <Content Include="Views\Units\Index.cshtml" />
     <Content Include="Views\Units\Create.cshtml" />
+    <Content Include="Views\MealIngredients\Index.cshtml" />
+    <Content Include="Views\MealIngredients\Create.cshtml" />
+    <Content Include="Views\MealIngredients\Edit.cshtml" />
+    <Content Include="Views\MealIngredients\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
