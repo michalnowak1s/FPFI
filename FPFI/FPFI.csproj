@@ -129,6 +129,7 @@
     <Compile Include="Controllers\IngredientsController.cs" />
     <Compile Include="Controllers\MealsController.cs" />
     <Compile Include="Controllers\RegistrationController.cs" />
+    <Compile Include="Controllers\UnitsController.cs" />
     <Compile Include="DAL\FPFIContext.cs" />
     <Compile Include="DAL\Initialize.cs" />
     <Compile Include="Global.asax.cs">
@@ -288,6 +289,11 @@
     <Content Include="Views\Ingredients\Details.cshtml" />
     <Content Include="Views\Ingredients\Edit.cshtml" />
     <Content Include="Views\Ingredients\Index.cshtml" />
+    <Content Include="Views\Units\Delete.cshtml" />
+    <Content Include="Views\Units\Details.cshtml" />
+    <Content Include="Views\Units\Edit.cshtml" />
+    <Content Include="Views\Units\Index.cshtml" />
+    <Content Include="Views\Units\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
