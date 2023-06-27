@@ -32,5 +32,16 @@ namespace FPFI.Controllers
 
             return View();
         }
+
+
+        public ActionResult Rejestracja()
+        {
+
+
+            return View();
+        }
+
+
+
     }
 }

@@ -17,7 +17,7 @@
                 margin-bottom: 20px;
             }
 
-            .welcome-message a {
+            .welcome-message button , a {
                 margin: 10px;
                 padding: 10px 20px;
                 font-size: 18px;
@@ -26,9 +26,12 @@
                 text-decoration: none;
                 border-radius: 5px;
             }
+
     </style>
 </head>
 <body>
     <div class="welcome-message"><h1>Witaj!</h1></div>
     <div class="welcome-message"><a href="Login.aspx">Zaloguj się</a></div>
-    <div class="welcome-message"><a href="Register.aspx">Zarejestruj</a></div>
+    <div class="welcome-message">
+        @Html.ActionLink("Rejestracja", "Create", "Registration", null, new { @class = "button" })
+    </div>
