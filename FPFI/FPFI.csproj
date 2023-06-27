@@ -132,7 +132,6 @@
     <Compile Include="Controllers\RegistrationController.cs" />
     <Compile Include="Controllers\UnitsController.cs" />
     <Compile Include="DAL\FPFIContext.cs" />
-    <Compile Include="DAL\Initialize.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -143,6 +142,10 @@
     <Compile Include="Migrations\202305151638067_update.cs" />
     <Compile Include="Migrations\202305151638067_update.designer.cs">
       <DependentUpon>202305151638067_update.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202306271831209_Initial.cs" />
+    <Compile Include="Migrations\202306271831209_Initial.designer.cs">
+      <DependentUpon>202306271831209_Initial.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Account.cs" />
@@ -312,6 +315,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202305151638067_update.resx">
       <DependentUpon>202305151638067_update.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202306271831209_Initial.resx">
+      <DependentUpon>202306271831209_Initial.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

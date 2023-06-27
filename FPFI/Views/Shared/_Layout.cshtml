@@ -28,6 +28,7 @@
                    @Html.ActionLink("Informacje", "About", "Home", new { area = "" }, new { @class = "list-group-item list-group-item-action py-3 ripple" })
                    @Html.ActionLink("Kontakt", "Contact", "Home", new { area = "" }, new { @class = "list-group-item list-group-item-action py-3 ripple" })
                    @Html.ActionLink("Posiłki", "Index", "Meals", new { area = "" }, new { @class = "list-group-item list-group-item-action py-3 ripple" })
+                   @Html.ActionLink("Składniki posiłków", "Index", "MealIngredients", new { area = "" }, new { @class = "list-group-item list-group-item-action py-3 ripple" })
 
 
                 </div>
@@ -51,7 +52,7 @@
     </header>
   
     <main style="margin-top: 58px;">
-        <div class="container-fluid pt-4">
+        <div class="container col-lg-8 pt-4">
             @RenderBody()
         </div>
     </main>
