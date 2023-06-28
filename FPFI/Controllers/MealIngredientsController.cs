@@ -6,6 +6,7 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
+using System.Xml;
 using FPFI.DAL;
 using FPFI.Models;
 
@@ -27,24 +28,63 @@ namespace FPFI.Controllers
         {
             return RedirectToAction("Details", "MealIngredients", new { id = id });
         }
-
+        public class MealIngredientsWithUnit
+        {
+            public int Meal { get; set; }
+            public string Ingredient { get; set; }
+            public int Quantity { get; set; }
+            public string Unit { get; set; }
+            // Dodaj inne wymagane kolumny
+        }
         public ActionResult MealIngredients(int? id)
         {
-            var MealI = db.MealIngredients.ToList();
+            var query = from MealIngredient in db.MealIngredients
+                        join Ingredient in db.Ingredients on MealIngredient.IngredientID equals Ingredient.IngredientID
+                        join Unit in db.Units on Ingredient.UnitID equals Unit.UnitID
+                        select new MealIngredientsWithUnit
+                        {
+                            Meal = MealIngredient.MealID,
+                            Ingredient = Ingredient.Name,
+                            Unit = Unit.Name,
+                            Quantity = MealIngredient.Quantity
+                        };
 
-            var mealIFind = MealI.FindAll(u => u.MealID == id);
-            var listMealI = new List<MealIngredient> { };
+            var filterQuery = query.Where(c => c.Meal == id);
 
-            foreach (var item in mealIFind)
-            {
-                listMealI.Add(item);
-            }
-            return View(listMealI);
-            //return RedirectToAction("Details", "MealIngredients", new { id = id });
+            List<MealIngredientsWithUnit> resultList = filterQuery.ToList();
+
+            //var MealI = db.MealIngredients.ToList();
+            //
+            //var mealIFind = MealI.FindAll(u => u.MealID == id);
+            //var listMealI = new List<MealIngredient> { };
+            //
+            //foreach (var item in mealIFind)
+            //{
+            //    listMealI.Add(item);
+            //}
+            //return View(listMealI);
+            //return RedirectToAction("Details", "MealIngredients", new { id = id }); 
+            return View(resultList);
         }
 
-        // GET: MealIngredients/Create
-        public ActionResult Create()
+        [HttpPost]
+        public ActionResult CreateToMeal(MealIngredient model)
+        {
+            if (ModelState.IsValid)
+            {
+                // Przypisanie wartości ID klucza obcego z formularza
+                model.MealID = Convert.ToInt32(Request.Form["MealID"]);
+
+                db.MealIngredients.Add(model);
+                db.SaveChanges();
+                return RedirectToAction("Index", new { MealID = model.MealID });
+            }
+
+            return View(model);
+        }
+
+            // GET: MealIngredients/Create
+            public ActionResult Create()
         {
             ViewBag.IngredientID = new SelectList(db.Ingredients, "IngredientID", "Name");
             ViewBag.MealID = new SelectList(db.Meal, "MealID", "Name");
