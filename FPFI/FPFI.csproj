@@ -299,6 +299,7 @@
     <Content Include="Views\MealIngredients\Create.cshtml" />
     <Content Include="Views\MealIngredients\Edit.cshtml" />
     <Content Include="Views\MealIngredients\Delete.cshtml" />
+    <Content Include="Views\MealIngredients\MealIngredients.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

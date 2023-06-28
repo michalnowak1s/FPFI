@@ -25,16 +25,22 @@ namespace FPFI.Controllers
         // GET: MealIngredients/Details/5
         public ActionResult Details(int? id)
         {
-            if (id == null)
+            return RedirectToAction("Details", "MealIngredients", new { id = id });
+        }
+
+        public ActionResult MealIngredients(int? id)
+        {
+            var MealI = db.MealIngredients.ToList();
+
+            var mealIFind = MealI.FindAll(u => u.MealID == id);
+            var listMealI = new List<MealIngredient> { };
+
+            foreach (var item in mealIFind)
             {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+                listMealI.Add(item);
             }
-            MealIngredient mealIngredient = db.MealIngredients.Find(id);
-            if (mealIngredient == null)
-            {
-                return HttpNotFound();
-            }
-            return View(mealIngredient);
+            return View(listMealI);
+            //return RedirectToAction("Details", "MealIngredients", new { id = id });
         }
 
         // GET: MealIngredients/Create

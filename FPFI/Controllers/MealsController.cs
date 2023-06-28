@@ -25,16 +25,17 @@ namespace FPFI.Controllers
         // GET: Meals/Details/5
         public ActionResult Details(int? id)
         {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }   
-            Meal meal = db.Meal.Find(id);
-            if (meal == null)
-            {
-                return HttpNotFound();
-            }
-            return View(meal);
+            //if (id == null)
+            //{
+            //    return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            //}   
+            //Meal meal = db.Meal.Find(id);
+            //if (meal == null)
+            //{
+            //    return HttpNotFound();
+            //}
+            //return View(meal);
+            return RedirectToAction("MealIngredients", "MealIngredients", new { id = id });
         }
 
         // GET: Meals/Create
