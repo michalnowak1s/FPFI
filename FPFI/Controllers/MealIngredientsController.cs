@@ -53,17 +53,7 @@ namespace FPFI.Controllers
 
             List<MealIngredientsWithUnit> resultList = filterQuery.ToList();
 
-            //var MealI = db.MealIngredients.ToList();
-            //
-            //var mealIFind = MealI.FindAll(u => u.MealID == id);
-            //var listMealI = new List<MealIngredient> { };
-            //
-            //foreach (var item in mealIFind)
-            //{
-            //    listMealI.Add(item);
-            //}
-            //return View(listMealI);
-            //return RedirectToAction("Details", "MealIngredients", new { id = id }); 
+
             return View(resultList);
         }
 

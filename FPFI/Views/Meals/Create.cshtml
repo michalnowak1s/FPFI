@@ -73,15 +73,16 @@
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10 p-2">
-                <input type="submit" value="Create" class="btn btn-dark" />
+                <input type="submit" value="Create" class="btn btn-primary m-2" />
             </div>
         </div>
     </div>
 }
 
 <div>
-    <button class="btn btn-dark"><i class="fa fa-arrow-left"></i> <a style="text-decoration:none;" href="/Meals">Back to list</a></button>
-   
+    @Html.ActionLink("Back to List", "Index", new { HtmlAttribiutes = new { @class = "btn btn-primary m-2" } })
+
+
 </div>
 
 @section Scripts {

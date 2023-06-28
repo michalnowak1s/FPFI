@@ -1,36 +1,38 @@
 ﻿@{
     ViewBag.Title = "Home Page";
 }
-
-
 <head>
-    <title>Strona startowa</title>
-    <style>
-        .welcome-message {
-            text-align: center;
-            margin-top: 50px;
-        }
-
-            .welcome-message h1 {
-                font-size: 36px;
-                color: #333;
-                margin-bottom: 20px;
-            }
-
-            .welcome-message button , a {
-                margin: 10px;
-                padding: 10px 20px;
-                font-size: 18px;
-                color: #fff;
-                background-color: #337ab7;
-                text-decoration: none;
-                border-radius: 5px;
-            }
-
-    </style>
+    <link href="~/Content/SiteWelcome.css" rel="stylesheet">
 </head>
+
+@*<head>
+        <title>Strona startowa</title>
+        <style>
+            .welcome-message {
+                text-align: center;
+                margin-top: 50px;
+            }
+
+                .welcome-message h1 {
+                    font-size: 36px;
+                    color: #333;
+                    margin-bottom: 20px;
+                }
+
+                .welcome-message button , a {
+                    margin: 10px;
+                    padding: 10px 20px;
+                    font-size: 18px;
+                    color: #fff;
+                    background-color: #337ab7;
+                    text-decoration: none;
+                    border-radius: 5px;
+                }
+
+        </style>
+    </head>*@
 <body>
-    <div class="welcome-message"><h1>Witaj!</h1></div>
+    <div class="welcome-message"><h2>Witaj!</h2></div>
     <div class="welcome-message"><a href="Login.aspx">Zaloguj się</a></div>
     <div class="welcome-message">
         @Html.ActionLink("Rejestracja", "Create", "Registration", null, new { @class = "button" })
