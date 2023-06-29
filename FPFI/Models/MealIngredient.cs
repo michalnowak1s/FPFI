@@ -1,23 +1,22 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Web;
 
 namespace FPFI.Models
 {
     public class MealIngredient
     {
+
         [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int MealsIngredientsID { get; set; }
-        public int IngredientID { get; set; }
+        [Column(Order = 1)]
         public int MealID { get; set; }
+
+        [Key]
+        [Column(Order = 2)]
+        public int IngredientID { get; set; }
         public int Quantity { get; set; }
 
-        public virtual Ingredient Ingredient { get; set; }
         public virtual Meal Meal { get; set; }
+        public virtual Ingredient Ingredient { get; set; }
 
     }
 }

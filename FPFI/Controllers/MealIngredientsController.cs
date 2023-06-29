@@ -56,8 +56,13 @@ namespace FPFI.Controllers
 
             return View(resultList);
         }
-
-        [HttpPost]
+        public ActionResult CreateToMeal(int? id)
+        {
+            ViewBag.IngredientID = new SelectList(db.Ingredients, "IngredientID", "Name");
+            ViewBag.MealID = id;
+            return View();
+        }
+/*        [HttpPost]
         public ActionResult CreateToMeal(MealIngredient model)
         {
             if (ModelState.IsValid)
@@ -71,13 +76,13 @@ namespace FPFI.Controllers
             }
 
             return View(model);
-        }
+        }*/
 
             // GET: MealIngredients/Create
-            public ActionResult Create()
+            public ActionResult Create(int? id)
         {
             ViewBag.IngredientID = new SelectList(db.Ingredients, "IngredientID", "Name");
-            ViewBag.MealID = new SelectList(db.Meal, "MealID", "Name");
+            ViewBag.MealID = id;
             return View();
         }
 

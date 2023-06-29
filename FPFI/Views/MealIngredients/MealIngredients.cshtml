@@ -1,33 +1,30 @@
-﻿
-
-
-    <p>
-        @Html.ActionLink("Create", "Create")
-    </p>
-    @using (Html.BeginForm("CreateToMeal", "MealIngredients"))
-    {
-
-
-        <input type="submit" value="Dodaj składnik do tego posiłku" />
-    }
-           <table class="table">
-               <thead>
-                   <tr>
-                       <th>MealId</th>
-                       <th>Ingredient</th>
-                       <th>Quantity</th>
-                       <th>Unit</th>
-                   </tr>
-               </thead>
-               <tbody>
-                   @foreach (var item in Model)
-                   {
-                       <tr>
-                           <td>@item.Meal</td>
-                           <td>@item.Ingredient</td>
-                           <td>@item.Quantity</td>
-                           <td>@item.Unit</td>
-                       </tr>
-                   }
-               </tbody>
-           </table>
+﻿@{
+    ViewBag.Title = "MealIngredients";
+}
+<br/>
+<h2>Danie: "nibyżedanie"</h2>
+<br/>
+@using (Html.BeginForm("CreateToMeal", "MealIngredients"))
+{
+    <input class="btn btn-primary" type="submit" value="Dodaj składnik do tego posiłku +">
+}
+<br/>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Ingredient</th>
+            <th>Quantity</th>
+            <th>Unit</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Ingredient</td>
+                <td>@item.Quantity</td>
+                <td>@item.Unit</td>
+            </tr>
+        }
+    </tbody>
+</table>

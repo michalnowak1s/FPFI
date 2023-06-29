@@ -214,6 +214,14 @@
     <Compile Include="Migrations\202305151638067_update.designer.cs">
       <DependentUpon>202305151638067_update.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202306281832289_init.cs" />
+    <Compile Include="Migrations\202306281832289_init.designer.cs">
+      <DependentUpon>202306281832289_init.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202306282117007_initinit.cs" />
+    <Compile Include="Migrations\202306282117007_initinit.designer.cs">
+      <DependentUpon>202306282117007_initinit.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Account.cs" />
     <Compile Include="Models\Ingredient.cs" />
@@ -345,7 +353,6 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\Home\Users.cshtml" />
     <Content Include="Views\Registration\Create.cshtml" />
     <Content Include="Views\Registration\Index.cshtml" />
     <Content Include="Views\Registration\Edit.cshtml" />
@@ -371,6 +378,7 @@
     <Content Include="Views\MealIngredients\Edit.cshtml" />
     <Content Include="Views\MealIngredients\Delete.cshtml" />
     <Content Include="Views\MealIngredients\MealIngredients.cshtml" />
+    <Content Include="Views\MealIngredients\CreateToMeal.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -384,6 +392,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202305151638067_update.resx">
       <DependentUpon>202305151638067_update.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202306281832289_init.resx">
+      <DependentUpon>202306281832289_init.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202306282117007_initinit.resx">
+      <DependentUpon>202306282117007_initinit.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
