@@ -7,7 +7,7 @@
 <h2>Lista posiłków</h2>
 <br/>
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Dodaj posiłek +", "Create")
 </p>
 <table class="table">
     <tr>
@@ -15,22 +15,22 @@
             @Html.DisplayNameFor(model => model.Account.Login)
         </th>*@
         <th>
-            @Html.DisplayNameFor(model => model.Name)
+            Nazwa
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Nationality)
+            Pochodzenie
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Nutriscore)
+            Nutriscore
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Difficulty)
+            Trudność
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.TimeConsumption)
+            Czas
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Type)
+            Kategoria
         </th>
         <th></th>
     </tr>
@@ -59,9 +59,9 @@
             @Html.DisplayFor(modelItem => item.Type)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.MealID }) |
+            @Html.ActionLink("Edytuj", "Edit", new { id=item.MealID }) |
             @Html.ActionLink("Składniki", "Details", new { id=item.MealID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.MealID })
+            @Html.ActionLink("Usuń", "Delete", new { id=item.MealID })
         </td>
     </tr>
 }

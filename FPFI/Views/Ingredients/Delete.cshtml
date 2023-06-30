@@ -3,16 +3,9 @@
 @{
     ViewBag.Title = "Delete";
 }
-
-<!DOCTYPE html>
-
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Delete</title>
-</head>
-<body>
-    <h3>Are you sure you want to delete this?</h3>
+<br />
+    <h2>Usuń składnik</h2>
+    <br />
     <div>
         <h4>Ingredient</h4>
         <hr />
@@ -72,8 +65,8 @@
             @Html.AntiForgeryToken()
 
             <div class="form-actions no-color">
-                <input type="submit" value="Delete" class="btn btn-default" /> |
-                @Html.ActionLink("Back to List", "Index")
+                <input type="submit" value="Usuń" class="btn btn-default" /> |
+                @Html.ActionLink("Powrót do listy", "Index")
             </div>
         }
     </div>
