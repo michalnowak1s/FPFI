@@ -19,8 +19,20 @@ namespace FPFI.Controllers
         // GET: MealIngredients
         public ActionResult Index()
         {
-            var mealIngredients = db.MealIngredients.Include(m => m.Ingredient).Include(m => m.Meal);
-            return View(mealIngredients.ToList());
+            var query = from MealIngredient in db.MealIngredients
+                        join Ingredient in db.Ingredients on MealIngredient.IngredientID equals Ingredient.IngredientID
+                        join Unit in db.Units on Ingredient.UnitID equals Unit.UnitID
+                        select new MealIngredientsWithUnit
+                        {
+                            Meal = MealIngredient.MealID,
+                            Ingredient = Ingredient.Name,
+                            Unit = Unit.Name,
+                            Quantity = MealIngredient.Quantity
+                        };
+
+
+            List<MealIngredientsWithUnit> resultList = query.ToList();
+            return View(resultList);
         }
 
         // GET: MealIngredients/Details/5
@@ -62,36 +74,35 @@ namespace FPFI.Controllers
             ViewBag.MealID = id;
             return View();
         }
-/*        [HttpPost]
-        public ActionResult CreateToMeal(MealIngredient model)
-        {
-            if (ModelState.IsValid)
-            {
-                // Przypisanie wartości ID klucza obcego z formularza
-                model.MealID = Convert.ToInt32(Request.Form["MealID"]);
+        /*        [HttpPost]
+                public ActionResult CreateToMeal(MealIngredient model)
+                {
+                    if (ModelState.IsValid)
+                    {
+                        // Przypisanie wartości ID klucza obcego z formularza
+                        model.MealID = Convert.ToInt32(Request.Form["MealID"]);
 
-                db.MealIngredients.Add(model);
-                db.SaveChanges();
-                return RedirectToAction("Index", new { MealID = model.MealID });
-            }
+                        db.MealIngredients.Add(model);
+                        db.SaveChanges();
+                        return RedirectToAction("Index", new { MealID = model.MealID });
+                    }
 
-            return View(model);
-        }*/
-
-            // GET: MealIngredients/Create
-            public ActionResult Create(int? id)
+                    return View(model);
+                }*/
+        public ActionResult Create()
         {
             ViewBag.IngredientID = new SelectList(db.Ingredients, "IngredientID", "Name");
-            ViewBag.MealID = id;
+            ViewBag.MealID = new SelectList(db.Meal, "MealID", "Name");
             return View();
         }
 
         // POST: MealIngredients/Create
         // Aby zapewnić ochronę przed atakami polegającymi na przesyłaniu dodatkowych danych, włącz określone właściwości, z którymi chcesz utworzyć powiązania.
         // Aby uzyskać więcej szczegółów, zobacz https://go.microsoft.com/fwlink/?LinkId=317598.
+
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "MealsIngredientsID,IngredientID,MealID,Quantity")] MealIngredient mealIngredient)
+        public ActionResult Create([Bind(Include = "IngredientID,MealID,Quantity")] MealIngredient mealIngredient)
         {
             if (ModelState.IsValid)
             {

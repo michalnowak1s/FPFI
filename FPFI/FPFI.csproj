@@ -206,21 +206,13 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202305091743589_InitialCreate.cs" />
-    <Compile Include="Migrations\202305091743589_InitialCreate.designer.cs">
-      <DependentUpon>202305091743589_InitialCreate.cs</DependentUpon>
+    <Compile Include="Migrations\202306301809024_init.cs" />
+    <Compile Include="Migrations\202306301809024_init.designer.cs">
+      <DependentUpon>202306301809024_init.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202305151638067_update.cs" />
-    <Compile Include="Migrations\202305151638067_update.designer.cs">
-      <DependentUpon>202305151638067_update.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202306281832289_init.cs" />
-    <Compile Include="Migrations\202306281832289_init.designer.cs">
-      <DependentUpon>202306281832289_init.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202306282117007_initinit.cs" />
-    <Compile Include="Migrations\202306282117007_initinit.designer.cs">
-      <DependentUpon>202306282117007_initinit.cs</DependentUpon>
+    <Compile Include="Migrations\202306301855527_zmana skladników do posiłków.cs" />
+    <Compile Include="Migrations\202306301855527_zmana skladników do posiłków.designer.cs">
+      <DependentUpon>202306301855527_zmana skladników do posiłków.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Account.cs" />
@@ -261,7 +253,6 @@
     <Content Include="Content\FontAwesome\css\font-awesome.min.css" />
     <Content Include="Content\FontAwesome\fonts\fontawesome-webfont.svg" />
     <Content Include="Content\HELP-US-OUT.txt" />
-    <Content Include="Content\SiteWelcome.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
@@ -368,17 +359,12 @@
     <Content Include="Views\Ingredients\Details.cshtml" />
     <Content Include="Views\Ingredients\Edit.cshtml" />
     <Content Include="Views\Ingredients\Index.cshtml" />
-    <Content Include="Views\Units\Delete.cshtml" />
-    <Content Include="Views\Units\Details.cshtml" />
-    <Content Include="Views\Units\Edit.cshtml" />
-    <Content Include="Views\Units\Index.cshtml" />
-    <Content Include="Views\Units\Create.cshtml" />
     <Content Include="Views\MealIngredients\Index.cshtml" />
-    <Content Include="Views\MealIngredients\Create.cshtml" />
     <Content Include="Views\MealIngredients\Edit.cshtml" />
     <Content Include="Views\MealIngredients\Delete.cshtml" />
     <Content Include="Views\MealIngredients\MealIngredients.cshtml" />
     <Content Include="Views\MealIngredients\CreateToMeal.cshtml" />
+    <Content Include="Views\MealIngredients\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -387,17 +373,11 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202305091743589_InitialCreate.resx">
-      <DependentUpon>202305091743589_InitialCreate.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202306301809024_init.resx">
+      <DependentUpon>202306301809024_init.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202305151638067_update.resx">
-      <DependentUpon>202305151638067_update.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202306281832289_init.resx">
-      <DependentUpon>202306281832289_init.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202306282117007_initinit.resx">
-      <DependentUpon>202306282117007_initinit.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202306301855527_zmana skladników do posiłków.resx">
+      <DependentUpon>202306301855527_zmana skladników do posiłków.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

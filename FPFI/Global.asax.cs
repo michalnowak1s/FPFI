@@ -25,7 +25,7 @@ namespace FPFI
 
                 //Najpierw podstawowe
 
-                /* var accountInitial = new List<Account>
+                 /*var accountInitial = new List<Account>
                  {
                  new Account{Login="Carson",Password="Alexander"},
                  new Account{Login="Meredith",Password="Alonso"},
@@ -79,10 +79,9 @@ namespace FPFI
                  {
                  new MealIngredient{MealID=1, IngredientID=3, Quantity= 15},
                  new MealIngredient{MealID=1, IngredientID=4, Quantity= 10},
-                 new MealIngredient{MealID=1, IngredientID=6, Quantity= 5},
-                 new MealIngredient{MealID=2, IngredientID=5, Quantity= 3},
-                 new MealIngredient{MealID=3, IngredientID=6, Quantity= 15},
-
+                 new MealIngredient{MealID=1, IngredientID=1, Quantity= 5},
+                 new MealIngredient{MealID=2, IngredientID=4, Quantity= 3},
+                 new MealIngredient{MealID=3, IngredientID=2, Quantity= 15},
                  };
                  mealsIngredientsInitial.ForEach(s => context.MealIngredients.Add(s));
                  context.SaveChanges();*/

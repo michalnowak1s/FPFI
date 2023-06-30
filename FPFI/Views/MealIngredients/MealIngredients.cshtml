@@ -1,14 +1,10 @@
 ﻿@{
     ViewBag.Title = "MealIngredients";
 }
-<br/>
-<h2>Danie: "nibyżedanie"</h2>
-<br/>
-@using (Html.BeginForm("CreateToMeal", "MealIngredients"))
-{
-    <input class="btn btn-primary" type="submit" value="Dodaj składnik do tego posiłku +">
-}
-<br/>
+
+<p>
+    @Html.ActionLink("Dodaj składnik +", "Create")
+</p>
 <table class="table">
     <thead>
         <tr>

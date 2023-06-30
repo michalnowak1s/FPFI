@@ -71,13 +71,13 @@ body {
 }
 
 .welcome-message button, a {
-    margin: 10px;
-    padding: 10px 20px;
+    margin: 5px;
+    padding: 5px 10px;
     font-size: 18px;
     color: #fff;
     background-color: #337ab7;
     text-decoration: none;
-    border-radius: 5px;
+    border-radius: 2px;
 }
 
 
