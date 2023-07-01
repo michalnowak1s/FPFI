@@ -1,74 +1,64 @@
 ﻿@model FPFI.Models.MealPlan
+<div class="container col-3 bg-white ">
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
 
-@using (Html.BeginForm()) 
-{
-    @Html.AntiForgeryToken()
-    
-    <div class="form-horizontal">
-        <h4>MealPlan</h4>
-        <hr />
-        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        <div class="form-group">
-            @Html.LabelFor(model => model.MealID, "MealID", htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.DropDownList("MealID", null, htmlAttributes: new { @class = "form-control" })
-                @Html.ValidationMessageFor(model => model.MealID, "", new { @class = "text-danger" })
+        <div class="form-horizontal">
+            <br />
+            <h4>Dodaj posiłek do planu:</h4>
+            <hr />
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            <div class="form-group">
+                @Html.LabelFor(model => model.MealID, "Posiłek", htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.DropDownList("MealID", null, htmlAttributes: new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.MealID, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.StartData, "Data rozpoczęcia", htmlAttributes: new { @class = "table-data control-label col-md-2" })
+                <div class="col-md-10">
+
+                    @Html.TextBoxFor(x => x.StartData, "{0:yyyy-MM-ddTHH:mm:ss}", new
+                            {
+                                @class = "form-control",
+                                required = "required",
+                                @type = "datetime-local"
+                            })
+                    @Html.ValidationMessageFor(model => model.StartData, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.EndData, "Data zakończenia", htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.TextBoxFor(x => x.EndData, "{0:yyyy-MM-ddTHH:mm:ss}", new
+                           {
+                               @class = "form-control",
+                               required = "required",
+                               @type = "datetime-local"
+                           })
+                    @Html.ValidationMessageFor(model => model.EndData, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+
+
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <br />
+                    <input type="submit" value="Create" class="btn btn-primary" />
+                    <br />
+                    <br />
+                    <button class="btn btn-primary" onclick="location.href='/Calendar/Index';">Back to Calendar</button>
+
+                </div>
             </div>
         </div>
+    }
+    <br/>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.StartData, htmlAttributes: new { @class = "table-data control-label col-md-2" })
-            <div class="col-md-10">
 
-                @Html.TextBoxFor(x => x.StartData, "{0:yyyy-MM-ddTHH:mm:ss}", new
-                        {
-                            @class = "form-control",
-                            required = "required",
-                            @type = "datetime-local"
-                        })
-                @Html.ValidationMessageFor(model => model.StartData, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.EndData, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.TextBoxFor(x => x.EndData, "{0:yyyy-MM-ddTHH:mm:ss}", new
-                       {
-                           @class = "form-control",
-                           required = "required",
-                           @type = "datetime-local"
-                       })
-                @Html.ValidationMessageFor(model => model.EndData, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.Title, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Title, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Title, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.Description, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Description, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Description, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-               
-                <input type="submit" value="Create" class="btn " />
-            </div>
-        </div>
     </div>
-}
-
-<div>
-    @Html.ActionLink("Back to Calendar", "Index")
-</div>
-

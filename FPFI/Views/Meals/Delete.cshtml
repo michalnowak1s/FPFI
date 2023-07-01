@@ -3,76 +3,81 @@
 @{
     ViewBag.Title = "Delete";
 }
+<div class="container col-3 bg-white ">
+    <h2>Usuń posiłek:</h2>
 
-<h2>Usuń posiłek</h2>
+    <div>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                Użytkownik
+            </dt>
 
-<div>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Account.Login)
-        </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Account.Login)
+            </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.Account.Login)
-        </dd>
+            <dt>
+                Nazwa
+            </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Name)
-        </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Name)
+            </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.Name)
-        </dd>
+            <dt>
+                Narodowość
+            </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Nationality)
-        </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Nationality)
+            </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.Nationality)
-        </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.Nutriscore)
+            </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Nutriscore)
-        </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Nutriscore)
+            </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.Nutriscore)
-        </dd>
+            <dt>
+                Trudność
+            </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Difficulty)
-        </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Difficulty)
+            </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.Difficulty)
-        </dd>
+            <dt>
+                Czas
+            </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.TimeConsumption)
-        </dt>
+            <dd>
+                @Html.DisplayFor(model => model.TimeConsumption)
+            </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.TimeConsumption)
-        </dd>
+            <dt>
+                Rodzaj
+            </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Type)
-        </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Type)
+            </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.Type)
-        </dd>
+        </dl>
 
-    </dl>
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
 
-    @using (Html.BeginForm()) {
-        @Html.AntiForgeryToken()
+            <div class="form-actions no-color">
 
-        <div class="form-actions no-color">
-            <input type="submit" value="Delete" class="btn btn-default" /> |
-            @Html.ActionLink("Powrót do listy", "Index")
-        </div>
-    }
-</div>
+                <input type="submit" value="Zatwierdź" class="btn btn-primary m-2" /> |
+
+                <button type="button" class="btn btn-primary m-2" onclick="location.href='@Url.Action("Index")'">Powrót do listy</button>
+
+            </div>
+        }
+    </div>
+    </div>

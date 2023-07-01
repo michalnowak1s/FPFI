@@ -20,11 +20,11 @@ namespace FPFI
             BundleConfig.RegisterBundles(BundleTable.Bundles);
 
 
-        /*    using (var context = new FPFIContext())
+            using (var context = new FPFIContext())
             {
-          //Najpierw podstawowe
+                //Najpierw podstawowe
 
-                 var accountInitial = new List<Account>
+                var accountInitial = new List<Account>
                  {
                  new Account{Login="Carson",Password="Alexander"},
                  new Account{Login="Meredith",Password="Alonso"},
@@ -35,10 +35,10 @@ namespace FPFI
                  new Account{Login="Laura",Password="Norman"},
                  new Account{Login="Nino",Password="Olivetto"}
                  };
-                 accountInitial.ForEach(s => context.Accounts.Add(s));
-                 context.SaveChanges();
+                accountInitial.ForEach(s => context.Accounts.Add(s));
+                context.SaveChanges();
 
-                 var mealsInitial = new List<Meal>
+                var mealsInitial = new List<Meal>
                  {
 
                      new Meal { Name = "Kluski", Nationality = "silesia", Difficulty = "3", Nutriscore = "A", Type = "klyuskowate", TimeConsumption = "2h", AccountID = 3 },
@@ -47,10 +47,10 @@ namespace FPFI
                      new Meal { Name = "ModroKapusta", Nationality = "silesia", Difficulty = "5", Nutriscore = "C", Type = "slunskie", TimeConsumption = "3h", AccountID = 3 },
                      new Meal { Name = "TortilieKurczak", Nationality = "mexico", Difficulty = "2", Nutriscore = "B", Type = "tortilie", TimeConsumption = "15m", AccountID = 3 },
                  };
-                 mealsInitial.ForEach(s => context.Meal.Add(s));
-                 context.SaveChanges();
+                mealsInitial.ForEach(s => context.Meal.Add(s));
+                context.SaveChanges();
 
-                 var unitsInitial = new List<Unit>
+                var unitsInitial = new List<Unit>
                  {
                      new Unit {Name="Gramy"},
                      new Unit {Name="Mililitr"},
@@ -58,10 +58,10 @@ namespace FPFI
                      new Unit {Name="Szczypta"},
 
                  };
-                 unitsInitial.ForEach(u => context.Units.Add(u));
-                 context.SaveChanges();
+                unitsInitial.ForEach(u => context.Units.Add(u));
+                context.SaveChanges();
 
-                 var ingredientsInitial = new List<Ingredient>
+                var ingredientsInitial = new List<Ingredient>
                  {
                  new Ingredient{Name="PenautButter", Allergen="nuts", Endurance="5", Nutriscore="A", Type="vegetables", UnitID=1},
                  new Ingredient{Name="Broccoli", Endurance="15", Nutriscore="C", Type="vegetables", UnitID=1},
@@ -69,14 +69,14 @@ namespace FPFI
                  new Ingredient{Name="Apple", Endurance="5", Nutriscore="B", Type="fruits", UnitID=1},
 
                  };
-                 ingredientsInitial.ForEach(s => context.Ingredients.Add(s));
-                 context.SaveChanges();
+                ingredientsInitial.ForEach(s => context.Ingredients.Add(s));
+                context.SaveChanges();
 
 
 
-                 //Przy nastepnym odpaleniu tabela z relacjami 
+                //Przy nastepnym odpaleniu tabela z relacjami 
 
-                 var mealsIngredientsInitial = new List<MealIngredient>
+                var mealsIngredientsInitial = new List<MealIngredient>
                  {
                  new MealIngredient{MealID=1, IngredientID=3, Quantity= 15},
                  new MealIngredient{MealID=1, IngredientID=4, Quantity= 10},
@@ -84,10 +84,10 @@ namespace FPFI
                  new MealIngredient{MealID=2, IngredientID=4, Quantity= 3},
                  new MealIngredient{MealID=3, IngredientID=2, Quantity= 15},
                  };
-                 mealsIngredientsInitial.ForEach(s => context.MealIngredients.Add(s));
-                 context.SaveChanges();
+                mealsIngredientsInitial.ForEach(s => context.MealIngredients.Add(s));
+                context.SaveChanges();
 
-            }*/
+            }
         }
     }
     }

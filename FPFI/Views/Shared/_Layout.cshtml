@@ -13,16 +13,27 @@
     <link rel="stylesheet" href="~/Content/FontAwesome/css/font-awesome.min.css">
     <script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.js'></script>
     @Scripts.Render("~/bundles/modernizr")
+    <style>
+        body {
+            background-image: url("https://media-cldnry.s-nbcnews.com/image/upload/rockcms/2022-03/plant-based-food-mc-220323-02-273c7b.jpg");
+            background-color: #cccccc;
+        }
+
+        header {
+            background-color: rgba(255, 255, 255, 0.5);
+        }
+
+    </style>
 </head>
 <body>
 
     <header>
 
-        <nav id="sidebar" class="collapse d-lg-block  collapse bg-white">
+        <nav id="sidebar" class="collapse d-lg-block  collapse bg-white  text-black text-opacity-100 bg-opacity-50">
             <div class="position-sticky">
-                <div class="list-group list-group-flush mx-3 mt-4">
+                <div class="list-group list-group-flush mx-3 mt-4 ">
 
-                    @Html.ActionLink("Strona główna", "Index", "Home", new { area = "" }, new { @class = "list-group-item list-group-item-action py-3 ripple" })
+                    @Html.ActionLink("Strona główna", "Index", "Home", new { area = "" }, new { @class = "list-group-item list-group-item-action py-3 ripple " })
                     @Html.ActionLink("Rejestracja", "Create", "Registration", new { area = "" }, new { @class = "list-group-item list-group-item-action py-3 ripple" })
                     @Html.ActionLink("Plan", "Index", "Calendar", new { area = "" }, new { @class = "list-group-item list-group-item-action py-3 ripple" })
                     @*@Html.ActionLink("Informacje", "About", "Home", new { area = "" }, new { @class = "list-group-item list-group-item-action py-3 ripple" })
@@ -37,7 +48,7 @@
 
 
         <nav id="main-navbar"
-             class="navbar navbar-expand-lg navbar-light bg-white  m-1 fixed-top">
+             class="navbar navbar-expand-lg navbar-light bg-white  text-black text-opacity-100 bg-opacity-50  m-1 fixed-top">
 
 
             <a class="navbar-brand pt-1" href="/">

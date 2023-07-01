@@ -9,12 +9,12 @@ namespace FPFI.Models
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int MealPlansID { get; set; }
+        [Required]
         public int MealID { get; set; }
         [Required]
         public DateTime StartData { get; set; }
         [Required]
         public DateTime EndData { get; set; }
-        [Required]
         public  string Title { get; set; }
         public string Description { get; set; }
 

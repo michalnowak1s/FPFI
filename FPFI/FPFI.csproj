@@ -210,6 +210,10 @@
     <Compile Include="Migrations\202307011305520_Ini-plan.designer.cs">
       <DependentUpon>202307011305520_Ini-plan.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202307011936438_dodaniemealplanreq.cs" />
+    <Compile Include="Migrations\202307011936438_dodaniemealplanreq.designer.cs">
+      <DependentUpon>202307011936438_dodaniemealplanreq.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Account.cs" />
     <Compile Include="Models\Ingredient.cs" />
@@ -429,7 +433,6 @@
     <Content Include="Views\Registration\Edit.cshtml" />
     <Content Include="Views\Meals\Create.cshtml" />
     <Content Include="Views\Meals\Delete.cshtml" />
-    <Content Include="Views\Meals\Details.cshtml" />
     <Content Include="Views\Meals\Edit.cshtml" />
     <Content Include="Views\Meals\Index.cshtml" />
     <Content Include="Views\Registration\Delete.cshtml" />
@@ -458,6 +461,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202307011305520_Ini-plan.resx">
       <DependentUpon>202307011305520_Ini-plan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202307011936438_dodaniemealplanreq.resx">
+      <DependentUpon>202307011936438_dodaniemealplanreq.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
