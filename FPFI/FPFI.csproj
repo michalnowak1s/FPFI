@@ -206,13 +206,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202306301809024_init.cs" />
-    <Compile Include="Migrations\202306301809024_init.designer.cs">
-      <DependentUpon>202306301809024_init.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202306301855527_zmana skladników do posiłków.cs" />
-    <Compile Include="Migrations\202306301855527_zmana skladników do posiłków.designer.cs">
-      <DependentUpon>202306301855527_zmana skladników do posiłków.cs</DependentUpon>
+    <Compile Include="Migrations\202307011305520_Ini-plan.cs" />
+    <Compile Include="Migrations\202307011305520_Ini-plan.designer.cs">
+      <DependentUpon>202307011305520_Ini-plan.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Account.cs" />
@@ -373,11 +369,8 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202306301809024_init.resx">
-      <DependentUpon>202306301809024_init.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202306301855527_zmana skladników do posiłków.resx">
-      <DependentUpon>202306301855527_zmana skladników do posiłków.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202307011305520_Ini-plan.resx">
+      <DependentUpon>202307011305520_Ini-plan.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

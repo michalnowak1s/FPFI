@@ -9,13 +9,16 @@ namespace FPFI.Models
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int MealPlansID { get; set; }
-        public int AccountID { get; set; }
         public int MealID { get; set; }
-        public DateTime MeakDay { get; set; }
-        public int Section { get; set; }
+        [Required]
+        public DateTime StartData { get; set; }
+        [Required]
+        public DateTime EndData { get; set; }
+        [Required]
+        public  string Title { get; set; }
+        public string Description { get; set; }
 
-        public virtual MealPlan MealPlans { get; set; }
-        public virtual Account Account { get; set; }
+        public virtual Meal Meals { get; set; }
 
     }
 }

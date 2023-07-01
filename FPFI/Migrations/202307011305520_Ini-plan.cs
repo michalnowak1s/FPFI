@@ -3,7 +3,7 @@
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class init : DbMigration
+    public partial class Iniplan : DbMigration
     {
         public override void Up()
         {
@@ -64,32 +64,31 @@
                 "dbo.MealIngredient",
                 c => new
                     {
-                        MealID = c.Int(nullable: false),
+                        MealIngredientID = c.Int(nullable: false, identity: true),
                         IngredientID = c.Int(nullable: false),
+                        MealID = c.Int(nullable: false),
                         Quantity = c.Int(nullable: false),
                     })
-                .PrimaryKey(t => new { t.MealID, t.IngredientID })
+                .PrimaryKey(t => t.MealIngredientID)
                 .ForeignKey("dbo.Ingredient", t => t.IngredientID, cascadeDelete: true)
                 .ForeignKey("dbo.Meal", t => t.MealID, cascadeDelete: true)
-                .Index(t => t.MealID)
-                .Index(t => t.IngredientID);
+                .Index(t => t.IngredientID)
+                .Index(t => t.MealID);
             
             CreateTable(
                 "dbo.MealPlan",
                 c => new
                     {
                         MealPlansID = c.Int(nullable: false, identity: true),
-                        AccountID = c.Int(nullable: false),
                         MealID = c.Int(nullable: false),
-                        MeakDay = c.DateTime(nullable: false),
-                        Section = c.Int(nullable: false),
-                        MealPlans_MealPlansID = c.Int(),
+                        StartData = c.DateTime(nullable: false),
+                        EndData = c.DateTime(nullable: false),
+                        Title = c.String(nullable: false),
+                        Description = c.String(),
                     })
                 .PrimaryKey(t => t.MealPlansID)
-                .ForeignKey("dbo.Account", t => t.AccountID, cascadeDelete: true)
-                .ForeignKey("dbo.MealPlan", t => t.MealPlans_MealPlansID)
-                .Index(t => t.AccountID)
-                .Index(t => t.MealPlans_MealPlansID);
+                .ForeignKey("dbo.Meal", t => t.MealID, cascadeDelete: true)
+                .Index(t => t.MealID);
             
             CreateTable(
                 "dbo.Tag",
@@ -120,18 +119,16 @@
         {
             DropForeignKey("dbo.TagsMeal", "TagID", "dbo.Tag");
             DropForeignKey("dbo.TagsMeal", "MealID", "dbo.Meal");
-            DropForeignKey("dbo.MealPlan", "MealPlans_MealPlansID", "dbo.MealPlan");
-            DropForeignKey("dbo.MealPlan", "AccountID", "dbo.Account");
+            DropForeignKey("dbo.MealPlan", "MealID", "dbo.Meal");
             DropForeignKey("dbo.MealIngredient", "MealID", "dbo.Meal");
             DropForeignKey("dbo.MealIngredient", "IngredientID", "dbo.Ingredient");
             DropForeignKey("dbo.Meal", "AccountID", "dbo.Account");
             DropForeignKey("dbo.Ingredient", "UnitID", "dbo.Unit");
             DropIndex("dbo.TagsMeal", new[] { "MealID" });
             DropIndex("dbo.TagsMeal", new[] { "TagID" });
-            DropIndex("dbo.MealPlan", new[] { "MealPlans_MealPlansID" });
-            DropIndex("dbo.MealPlan", new[] { "AccountID" });
-            DropIndex("dbo.MealIngredient", new[] { "IngredientID" });
+            DropIndex("dbo.MealPlan", new[] { "MealID" });
             DropIndex("dbo.MealIngredient", new[] { "MealID" });
+            DropIndex("dbo.MealIngredient", new[] { "IngredientID" });
             DropIndex("dbo.Meal", new[] { "AccountID" });
             DropIndex("dbo.Ingredient", new[] { "UnitID" });
             DropTable("dbo.TagsMeal");
