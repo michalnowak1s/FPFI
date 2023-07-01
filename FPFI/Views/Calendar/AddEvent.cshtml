@@ -19,15 +19,26 @@
         <div class="form-group">
             @Html.LabelFor(model => model.StartData, htmlAttributes: new { @class = "table-data control-label col-md-2" })
             <div class="col-md-10">
-                @Html.TextBoxFor(model => model.StartData, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.StartData, "", new  {@class = "datepicker text-danger", type = "date"  })
+
+                @Html.TextBoxFor(x => x.StartData, "{0:yyyy-MM-ddTHH:mm:ss}", new
+                        {
+                            @class = "form-control",
+                            required = "required",
+                            @type = "datetime-local"
+                        })
+                @Html.ValidationMessageFor(model => model.StartData, "", new { @class = "text-danger" })
             </div>
         </div>
 
         <div class="form-group">
             @Html.LabelFor(model => model.EndData, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.EndData, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.TextBoxFor(x => x.EndData, "{0:yyyy-MM-ddTHH:mm:ss}", new
+                       {
+                           @class = "form-control",
+                           required = "required",
+                           @type = "datetime-local"
+                       })
                 @Html.ValidationMessageFor(model => model.EndData, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -50,7 +61,8 @@
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Create" class="btn btn-default" />
+               
+                <input type="submit" value="Create" class="btn " />
             </div>
         </div>
     </div>
@@ -60,12 +72,3 @@
     @Html.ActionLink("Back to Calendar", "Index")
 </div>
 
-<script>
-$(document).ready(function () {
-   $(".datepicker").datepicker({
-      dateFormat: "dd-mm-yy",
-      changemonth: true,
-      changeyear: true
-      });
-   });
-</script>
