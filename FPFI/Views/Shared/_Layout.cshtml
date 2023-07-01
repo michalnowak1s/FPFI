@@ -17,7 +17,7 @@
 <body>
 
     <header>
-      
+
         <nav id="sidebar" class="collapse d-lg-block  collapse bg-white">
             <div class="position-sticky">
                 <div class="list-group list-group-flush mx-3 mt-4">
@@ -26,7 +26,7 @@
                     @Html.ActionLink("Rejestracja", "Create", "Registration", new { area = "" }, new { @class = "list-group-item list-group-item-action py-3 ripple" })
                     @Html.ActionLink("Plan", "Index", "Calendar", new { area = "" }, new { @class = "list-group-item list-group-item-action py-3 ripple" })
                     @*@Html.ActionLink("Informacje", "About", "Home", new { area = "" }, new { @class = "list-group-item list-group-item-action py-3 ripple" })
-                    @Html.ActionLink("Kontakt", "Contact", "Home", new { area = "" }, new { @class = "list-group-item list-group-item-action py-3 ripple" })*@
+                        @Html.ActionLink("Kontakt", "Contact", "Home", new { area = "" }, new { @class = "list-group-item list-group-item-action py-3 ripple" })*@
                     @Html.ActionLink("Posiłki", "Index", "Meals", new { area = "" }, new { @class = "list-group-item list-group-item-action py-3 ripple" })
                     @Html.ActionLink("Składniki", "Index", "Ingredients", new { area = "" }, new { @class = "list-group-item list-group-item-action py-3 ripple" })
 
@@ -34,23 +34,23 @@
                 </div>
             </div>
         </nav>
-       
-     
+
+
         <nav id="main-navbar"
              class="navbar navbar-expand-lg navbar-light bg-white  m-1 fixed-top">
-            
-            
-                <a class="navbar-brand pt-1" href="/">
-                    <img src="~/Content/android-chrome-512x512.png"
-                         height="35"
-                         alt=""
-                         loading="lazy" />
-                    - Food P.. F.. I..
-                </a>
-             
+
+
+            <a class="navbar-brand pt-1" href="/">
+                <img src="~/Content/android-chrome-512x512.png"
+                     height="35"
+                     alt=""
+                     loading="lazy" />
+                - Food P.. F.. I..
+            </a>
+
         </nav>
     </header>
-  
+
     <main style="margin-top: 58px;">
         <div class="container-fluid pt-4 m-lg-5">
             @RenderBody()
@@ -60,6 +60,11 @@
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
-    @RenderSection("scripts", required: false)
+    @RenderSection("scripts",  false)
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/fullcalendar.min.css" rel="stylesheet" />
+
+    <!-- FullCalendar JavaScript files -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/fullcalendar.min.js"></script>
 </body>
 </html>

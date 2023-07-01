@@ -20,10 +20,9 @@ namespace FPFI
             BundleConfig.RegisterBundles(BundleTable.Bundles);
 
 
-            using (var context = new FPFIContext())
+        /*    using (var context = new FPFIContext())
             {
-
-                //Najpierw podstawowe
+          //Najpierw podstawowe
 
                  var accountInitial = new List<Account>
                  {
@@ -88,7 +87,7 @@ namespace FPFI
                  mealsIngredientsInitial.ForEach(s => context.MealIngredients.Add(s));
                  context.SaveChanges();
 
-            }
+            }*/
         }
     }
     }

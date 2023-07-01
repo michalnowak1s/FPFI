@@ -1,4 +1,7 @@
 ﻿/* Set padding to keep content from hitting the edges */
+:root {
+    --fc-event-bg-color: #3788d1;
+}
 .body-content {
     margin-top: 15px;
     padding-left: 15px;
@@ -42,6 +45,7 @@ body {
     width:auto;
     z-index: 600;
 }
+
 
 
 .sidebar .active {
