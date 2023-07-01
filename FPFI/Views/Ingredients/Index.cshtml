@@ -1,0 +1,68 @@
+﻿@model IEnumerable<FPFI.Models.Ingredient>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+
+    <br/>
+    <h2>Lista składników</h2>
+<br/>
+    <p>
+        @Html.ActionLink("Dodaj składnik +", "Create")
+    </p>
+    <table class="table">
+        <tr>
+
+            <th>
+                Nazwa
+            </th>
+            <th>
+                Kategoria
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Nutriscore)
+            </th>
+            <th>
+                Witalność
+            </th>
+            <th>
+                Alergeny
+            </th>
+            <th>
+                Jednostka
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Type)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nutriscore)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Endurance)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Allergen)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Unit.Name)
+                </td>
+                <td>
+                    @Html.ActionLink("Edytuj", "Edit", new { id = item.IngredientID }) |
+                    @Html.ActionLink("Szczegóły", "Details", new { id = item.IngredientID }) |
+                    @Html.ActionLink("Usuń", "Delete", new { id = item.IngredientID })
+                </td>
+            </tr>
+        }
+
+    </table>

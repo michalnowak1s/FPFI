@@ -1,0 +1,77 @@
+﻿@model FPFI.Models.Ingredient
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Szczegóły</title>
+</head>
+<body>
+    <div>
+        <dl class="dl-horizontal">
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Name)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Name)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Type)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Type)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Nutriscore)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Nutriscore)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Endurance)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Endurance)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Allergen)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Allergen)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Unit.Name)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Unit.Name)
+            </dd>
+
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Edytuj", "Edit", new { id = Model.IngredientID }) |
+        @Html.ActionLink("Powrót do listy", "Index")
+    </p>
+</body>
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
+
+</html>

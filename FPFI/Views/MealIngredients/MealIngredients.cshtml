@@ -1,0 +1,26 @@
+﻿@{
+    ViewBag.Title = "MealIngredients";
+}
+
+<p>
+    @Html.ActionLink("Dodaj składnik +", "Create")
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Ingredient</th>
+            <th>Quantity</th>
+            <th>Unit</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Ingredient</td>
+                <td>@item.Quantity</td>
+                <td>@item.Unit</td>
+            </tr>
+        }
+    </tbody>
+</table>

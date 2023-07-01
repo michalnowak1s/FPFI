@@ -7,13 +7,13 @@ namespace FPFI.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.4.4")]
-    public sealed partial class update : IMigrationMetadata
+    public sealed partial class Iniplan : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(update));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(Iniplan));
         
         string IMigrationMetadata.Id
         {
-            get { return "202305151638067_update"; }
+            get { return "202307011305520_Ini-plan"; }
         }
         
         string IMigrationMetadata.Source

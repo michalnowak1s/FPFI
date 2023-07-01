@@ -10,7 +10,6 @@
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
-            ContextKey = "FPFI.DAL.FPFIContext";
         }
 
         protected override void Seed(FPFI.DAL.FPFIContext context)

@@ -1,0 +1,78 @@
+﻿@model FPFI.Models.Ingredient
+
+@{
+    ViewBag.Title = "Delete";
+}
+<br />
+    <h2>Usuń składnik</h2>
+    <br />
+    <div>
+        <h4>Ingredient</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.Unit.Name)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Unit.Name)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Name)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Name)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Type)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Type)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Nutriscore)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Nutriscore)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Endurance)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Endurance)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Allergen)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Allergen)
+            </dd>
+
+        </dl>
+
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="form-actions no-color">
+                <input type="submit" value="Usuń" class="btn btn-default" /> |
+                @Html.ActionLink("Powrót do listy", "Index")
+            </div>
+        }
+    </div>
+</body>
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
+
+</html>

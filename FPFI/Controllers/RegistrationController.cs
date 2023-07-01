@@ -47,7 +47,7 @@ namespace FPFI.Controllers
                 {
                     db.Accounts.Add(account);
                     db.SaveChanges();
-                    return RedirectToAction("Index");
+                    return RedirectToAction("Create");
                 }
             }
             catch (DataException /* dex */)

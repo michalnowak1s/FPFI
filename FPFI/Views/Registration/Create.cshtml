@@ -9,7 +9,7 @@
     @Html.AntiForgeryToken()
 
 
-    <h4>Account</h4>
+    <h4>Rejestracja</h4>
 
     <hr />
     @Html.ValidationSummary(true, "", new { @class = "text-danger" })
@@ -48,10 +48,8 @@
     </div>
 
 
-    <input type="submit" value="Create" class="btn btn-primary m-2" />
+    <input type="submit" value="Zatwierdź" class="btn btn-primary m-2" />
 
 
-    <div>
-        @Html.ActionLink("Back to List", "Index", new { HtmlAttribiutes = new { @class = "btn btn-danger" } })
-    </div>
+   
 }

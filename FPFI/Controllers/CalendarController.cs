@@ -1,4 +1,5 @@
 ﻿using FPFI.DAL;
+using FPFI.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,76 +17,78 @@ namespace FPFI.Controllers
             return View();
         }
 
-        // GET: Calendar/Details/5
-        public ActionResult Details(int id)
+        [HttpGet]
+        public JsonResult GetEvents()
         {
-            return View();
+           
+                var events = db.MealPlans.ToList();
+                return new JsonResult
+                {
+                    Data = events,
+                    JsonRequestBehavior = JsonRequestBehavior.AllowGet
+                };
+           
+        }
+        [HttpGet]
+        public ActionResult AddEvent()
+        {
+            
+            return View(db.MealPlans.ToList());
         }
 
-        // GET: Calendar/Create
-        public ActionResult Create()
-        {
-            return View();
-        }
-
-        // POST: Calendar/Create
         [HttpPost]
-        public ActionResult Create(FormCollection collection)
+        public ActionResult AddEvent([Bind(Include = "Title,Description,StartData,EndData")] MealPlan plan)
         {
-            try
+            if (ModelState.IsValid)
             {
-                // TODO: Add insert logic here
-
+                db.MealPlans.Add(plan);
+                db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            catch
-            {
-                return View();
-            }
+            return View(plan);
         }
-
-        // GET: Calendar/Edit/5
-        public ActionResult Edit(int id)
+        /*[HttpPost]
+        public JsonResult addEvent(MealPlan m )
         {
-            return View();
+            var status = 0;
+            
+                if(m.MealPlansID > 0) 
+                {
+                    var v = db.MealPlans.Where(a => a.MealPlansID == m.MealPlansID).FirstOrDefault();
+                    if (m.MealPlansID != 0)
+                    {
+                        v.Title = m.Title; 
+                        v.StartData = m.StartData;
+                        v.EndData = m.EndData;
+                        v.Description = m.Description;
+                    }
+
+                }   
+                else
+                {
+                    db.MealPlans.Add(m);
+                }
+                db.SaveChanges();
+                status = 1;
+            
+            return new JsonResult { Data = new { status = status } };
         }
 
-        // POST: Calendar/Edit/5
         [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
+        public JsonResult DeleteEvent(int id)
         {
-            try
-            {
-                // TODO: Add update logic here
-
-                return RedirectToAction("Index");
+            var status = 0;
+            using (var db = new FPFIContext()) { 
+                var v = db.MealPlans.Where(a=> a.MealPlansID==id).FirstOrDefault();
+                if (v != null)
+                {
+                    db.MealPlans.Remove(v);
+                    db.SaveChanges();
+                    status = 1;
+                }
             }
-            catch
-            {
-                return View();
-            }
-        }
 
-        // GET: Calendar/Delete/5
-        public ActionResult Delete(int id)
-        {
-            return View();
-        }
-
-        // POST: Calendar/Delete/5
-        [HttpPost]
-        public ActionResult Delete(int id, FormCollection collection)
-        {
-            try
-            {
-                // TODO: Add delete logic here
-
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
-        }
+            return new JsonResult { Data = new {status = status} };
+        }*/
     }
 }

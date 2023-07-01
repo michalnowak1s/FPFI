@@ -1,4 +1,7 @@
 ﻿/* Set padding to keep content from hitting the edges */
+:root {
+    --fc-event-bg-color: #3788d1;
+}
 .body-content {
     margin-top: 15px;
     padding-left: 15px;
@@ -44,6 +47,7 @@ body {
 }
 
 
+
 .sidebar .active {
     border-radius: 5px;
     box-shadow: 0 2px 5px 0 rgb(0 0 0 / 16%), 0 2px 10px 0 rgb(0 0 0 / 12%);
@@ -57,3 +61,27 @@ body {
     overflow-x: hidden;
     overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
 }
+
+
+.welcome-message {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.welcome-message h1 {
+    font-size: 36px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.welcome-message button, a {
+    margin: 5px;
+    padding: 5px 10px;
+    font-size: 18px;
+    color: #fff;
+    background-color: #337ab7;
+    text-decoration: none;
+    border-radius: 2px;
+}
+
+
