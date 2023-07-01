@@ -32,12 +32,12 @@ namespace FPFI.Controllers
         [HttpGet]
         public ActionResult AddEvent()
         {
-            
-            return View(db.MealPlans.ToList());
+            ViewBag.MealID = new SelectList(db.Meal, "MealID", "name");
+            return View();
         }
 
         [HttpPost]
-        public ActionResult AddEvent([Bind(Include = "Title,Description,StartData,EndData")] MealPlan plan)
+        public ActionResult AddEvent([Bind(Include = "MealPlansID,MealID,StartData,EndData,Title,Description")] MealPlan plan)
         {
             if (ModelState.IsValid)
             {
@@ -45,6 +45,7 @@ namespace FPFI.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
+            ViewBag.MealID = new SelectList(db.Meal, "MealID", "Name", plan.MealID);
             return View(plan);
         }
         /*[HttpPost]

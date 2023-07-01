@@ -446,8 +446,8 @@
     <Content Include="Views\MealIngredients\Create.cshtml" />
     <Content Include="Views\Calendar\Index.cshtml" />
     <Content Include="Views\Calendar\GetEvents.cshtml" />
+    <Content Include="Views\Calendar\nonUse.cshtml" />
     <Content Include="Views\Calendar\AddEvent.cshtml" />
-    <Content Include="Views\Calendar\AddEventt.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
